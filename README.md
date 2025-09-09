@@ -1,1 +1,206 @@
-# pedronc1.github.io
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Chagas</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff url("fundo.png") repeat center;
+      background-size: 40%;
+      image-rendering: pixelated;
+      color: #FFFFFF;
+    }
+    header {
+      background: radial-gradient(ellipse at top, #BAF404, #FFFFFF44 40%, #BABABA00 60%);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 1rem;
+    }
+    header .title img {
+      max-width: 40%;
+      filter: invert(100%);
+      height: auto;
+      border: none;
+    }
+    main {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: rgba(17, 17, 17, 0.9);
+      border: 4px solid #BAF404;
+      box-shadow: 8px 8px 0px #BABABA;
+      color: #FFFFFF;
+      flex-wrap: wrap;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2, .title-img {
+      display: block;
+      text-align: left;
+      margin: 1rem 0;
+    }
+    section h2 img, .title-img img {
+      max-width: 100%;
+      filter: invert(100%);
+      height: auto;
+      border: none;
+    }
+    ul {
+      list-style: square;
+      padding-left: 1.5rem;
+    }
+    a.button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(45deg, #BAF404, #BABABA);
+      border: 3px outset #FFFFFF;
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background: linear-gradient(45deg, #FFFFFF, #BAF404);
+      border: 3px inset #BABABA;
+    }
+    .column {
+      width: 48%;
+    }
+    footer {
+      text-align: center;
+      background: rgba(17, 17, 17, 0.9);
+      padding: 1rem;
+      font-size: 0.9rem;
+      border-top: 4px double #BAF404;
+      color: #FFFFFF;
+      overflow: hidden;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: left;
+      }
+      .column {
+        width: 100%;
+      }
+      header .title img {
+        max-width: 60%;
+      }
+    }    
+    .ufo-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    main, header, footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* UFO Animation */
+    .ufo {
+      position: absolute;
+      width: 100px;
+      animation: moveX 6s infinite alternate linear;
+    }
+    .ufo img {
+      width: 100%;
+    }
+    @keyframes moveX {
+      from { left: 0; }
+      to { left: calc(100% - 100px); }
+    }
+    .ufo {
+      top: 0;
+      animation: moveY 8s infinite alternate ease-in-out, moveX 6s infinite alternate linear;
+    }
+    @keyframes moveY {
+      from { top: 0; }
+      to { top: calc(100% - 100px); }
+    }
+
+    /* Footer scrolling animation */
+    .footer-scroll {
+      display: inline-block;
+      white-space: nowrap;
+      position: absolute;
+      animation: scrollFooter 15s linear infinite;
+    }
+    @keyframes scrollFooter {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="title"><img src="titulos/nome.png" alt="Pedro do Nascimento Chagas - Psicólogo CRP 05/77098"></div>
+  </header>
+
+  <main>
+    <div class="column">
+      <section>
+        <div class="title-img"><img src="titulos/sobre.png" alt="Sobre mim"></div>
+        <p><strong>Psicólogo - CRP 05/77098</strong></p>
+        <p>Formado pela Universidade Federal Fluminense em Rio das Ostras - RJ</p>
+        <ul>
+          <li>Clínica fenomenológico existencial</li>
+          <li>Psicoterapia Online - Adolescentes e Adultos</li>
+          <li>Psicólogo - CRAS Lagomar, Macaé-RJ</li>
+        </ul>
+      </section>
+      <section>
+        <div class="title-img"><img src="titulos/areas.png" alt="Áreas de interesse"></div>
+        <ul>
+          <li>Raça e negritude</li>
+          <li>Autismo, TDAH e neurodivergências</li>
+          <li>Gênero, sexualidade e vivências LGBT</li>
+          <li>Estresse e Ansiedade</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="column">
+      <section>
+        <div class="title-img"><img src="titulos/contato.png" alt="Contato"></div>
+        <p>Email: <a href="mailto:pedronc.psi@gmail.com">pedronc.psi@gmail.com</a></p>
+        <p>Telefone: <a href="tel:+5522997365995">(22) 99736-5995</a></p>
+      </section>
+
+      <section>
+        <div class="title-img"><img src="titulos/contato.png" alt="Links"></div>
+        <a class="button" href="https://instagram.com/pedrochagas.psi" target="_blank">Instagram</a>
+        <a class="button" href="https://www.linkedin.com/in/pedronchagas/" target="_blank">LinkedIn</a>
+        <a class="button" href="https://wa.me/5522997635549?text=Ol%C3%A1%21+Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+atendimento%21" target="_blank">WhatsApp</a>
+        <a class="button" href="http://lattes.cnpq.br/8074806225892694" target="_blank">Lattes</a>
+        <a class="button" href="https://bento.me/pedropsi" target="_blank">Antigo site</a>
+      </section>
+    </div>
+  </main>
+
+  <div class="ufo-bg">
+    <div class="ufo"><img src="Ufo.gif" alt="UFO voador"></div>
+  </div>
+
+  <footer>
+    <div class="footer-scroll">
+      <img src="https://web.archive.org/web/20091026231811im_/http://geocities.com/dans_world2003/alien.gif"> Site oficial de Pecro <img src="https://web.archive.org/web/20091026231811im_/http://geocities.com/dans_world2003/alien.gif">
+    </div>
+  </footer>
+</body>
+</html>
