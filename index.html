@@ -6,144 +6,155 @@
   <title>Pedro Chagas</title>
   <style>
     body {
-      font-family: "Comic Sans MS", "Arial", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #ffffff url("https://web.archive.org/web/20091022022538im_/http://www.geocities.com/meotoko_punkgirl2003/anistarrynight.gif") repeat center;
-      background-size: 40%;
-      image-rendering: pixelated;
-      color: #FFFFFF;
-    }
-    header {
-      background: radial-gradient(ellipse at top, #BAF404, #FFFFFF44 40%, #BABABA00 60%);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 1rem;
-    }
-    header .title img {
-      max-width: 40%;
-      filter: invert(100%);
-      height: auto;
-      border: none;
-    }
-    main {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: rgba(17, 17, 17, 0.9);
-      border: 4px solid #BAF404;
-      box-shadow: 8px 8px 0px #BABABA;
-      color: #FFFFFF;
-      flex-wrap: wrap;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    section h2, .title-img {
-      display: block;
-      text-align: left;
-      margin: 1rem 0;
-    }
-    section h2 img, .title-img img {
-      max-width: 100%;
-      filter: invert(100%);
-      height: auto;
-      border: none;
-    }
-    ul {
-      list-style: square;
-      padding-left: 1.5rem;
-    }
-    a.button {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: linear-gradient(45deg, #BAF404, #BABABA);
-      border: 3px outset #FFFFFF;
-      color: #000000;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.button:hover {
-      background: linear-gradient(45deg, #FFFFFF, #BAF404);
-      border: 3px inset #BABABA;
-    }
-    .column {
-      width: 48%;
-    }
-    footer {
-      text-align: center;
-      background: rgba(17, 17, 17, 0.9);
-      padding: 3rem;
-      font-size: 0.9rem;
-      border-top: 4px double #BAF404;
-      color: #FFFFFF;
-      overflow: hidden;
-      position: relative;
-    }
-    @media (max-width: 768px) {
-      main {
-        flex-direction: column;
-        align-items: left;
-      }
-      .column {
-        width: 100%;
-      }
-      header .title img {
-        max-width: 60%;
-      }
-    }    
-    .ufo-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-    main, header, footer {
-      position: relative;
-      z-index: 2;
-    }
+	font-family: "Comic Sans MS", "Arial", sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #ffffff url("https://web.archive.org/web/20091022022538im_/http://www.geocities.com/meotoko_punkgirl2003/anistarrynight.gif") repeat center;
+	background-size: 40%;
+	image-rendering: pixelated;
+	color: #FFFFFF
+}
+header {
+	background: radial-gradient(ellipse at top, #BAF404, #FFFFFF44 40%, #BABABA00 60%);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 1rem
+}
+header .title img {
+	max-width: 40%;
+	filter: invert(100%);
+	height: auto;
+	border: none
+}
+main {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 1rem;
+	background: rgba(17, 17, 17, 0.9);
+	border: 4px solid #BAF404;
+	box-shadow: 8px 8px 0px #BABABA;
+	color: #FFFFFF;
+	flex-wrap: wrap
+}
+section {
+	margin-bottom: 2rem
+}
+section h2, .title-img {
+	display: block;
+	text-align: left;
+	margin: 1rem 0
+}
+section h2 img, .title-img img {
+	max-width: 100%;
+	filter: invert(100%);
+	height: auto;
+	border: none
+}
+ul {
+	list-style: square;
+	padding-left: 1.5rem
+}
+a.button {
+	display: inline-block;
+	margin: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: linear-gradient(45deg, #BAF404, #BABABA);
+	border: 3px outset #FFFFFF;
+	color: #000000;
+	text-decoration: none;
+	font-weight: 700
+}
+a.button:hover {
+	background: linear-gradient(45deg, #FFFFFF, #BAF404);
+	border: 3px inset #BABABA
+}
+.column {
+	width: 48%
+}
+footer {
+	text-align: center;
+	background: rgba(17, 17, 17, 0.9);
+	padding: 3rem;
+	font-size: 0.9rem;
+	border-top: 4px double #BAF404;
+	color: #FFFFFF;
+	overflow: hidden;
+	position: relative
+}
+@media (max-width: 768px) {
+	main {
+		flex-direction: column;
+		align-items: left
+}
+	.column {
+		width: 100%
+}
+	header .title img {
+		max-width: 60%
+}
+}
+.ufo-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none
+}
+main, header, footer {
+	position: relative;
+	z-index: 2
+}
+/* UFO Animation */
+.ufo {
+	position: absolute;
+	width: 100px;
+	animation: moveX 6s infinite alternate linear
+}
+.ufo img {
+	width: 100%
+}
+@keyframes moveX {
+	from {
+		left: 0
+}
+	to {
+		left: calc(100% - 100px)
+}
+}
+.ufo {
+	top: 0;
+	animation: moveY 8s infinite alternate ease-in-out, moveX 6s infinite alternate linear
+}
+@keyframes moveY {
+	from {
+		top: 0
+}
+	to {
+		top: calc(100% - 100px)
+}
+}
+/* Footer scrolling animation */
+.footer-scroll {
+	display: inline-block;
+	white-space: wrap;
+	position: absolute;
+	animation: scrollFooter 15s linear infinite
+}
+@keyframes scrollFooter {
+	from {
+		transform: translateX(100%)
+}
+	to {
+		transform: translateX(-100%)
+}
+}
 
-    /* UFO Animation */
-    .ufo {
-      position: absolute;
-      width: 100px;
-      animation: moveX 6s infinite alternate linear;
-    }
-    .ufo img {
-      width: 100%;
-    }
-    @keyframes moveX {
-      from { left: 0; }
-      to { left: calc(100% - 100px); }
-    }
-    .ufo {
-      top: 0;
-      animation: moveY 8s infinite alternate ease-in-out, moveX 6s infinite alternate linear;
-    }
-    @keyframes moveY {
-      from { top: 0; }
-      to { top: calc(100% - 100px); }
-    }
-
-    /* Footer scrolling animation */
-    .footer-scroll {
-      display: inline-block;
-      white-space: wrap;
-      position: absolute;
-      animation: scrollFooter 15s linear infinite;
-    }
-    @keyframes scrollFooter {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
-    }
   </style>
 </head>
 
