@@ -9,6 +9,7 @@
 	
 <style>
 		body {
+			font-family: "Comic Sans MS", "Arial", sans-serif;
 		    margin: 0;
 		    padding: 1em;
 		    /* Add a fallback background color */
@@ -23,11 +24,17 @@
 		    /* layout ready for header + content */
 		    display: flex;
 		    flex-direction: column;
+			text-shadow:
+				1px 1px 2px black,
+				0 0 1em white,
+				0 0 0.2em blue;
 		}
 
 	header {
 		text-align: center;
 		padding: 1rem;
+		text-shadow:
+				1px 1px 2px black,
 	}
 
 	main {
@@ -55,39 +62,107 @@
 	  height: auto;
 		margin: 0;
 	}
+	    #corpo, #genero, #cerebro {
+      display: none;
+    }
+	
+	
 
 
 
 </style>
 </head>
+
+
 <body>
+
   <header>
 	<img src="zinerines.svg" alt="ZINERINES">
   </header>
-
+  
+	
   <main>
+		<div id="zines">
+			<h1 style="color:#9D1205;">Como não ter corpo: <button onclick="Esconde('corpo')">Mostrar</button></h1>
+			
+			<div id="corpo">
+					
+					<p><img src="corpo/corpo01.png"></p>
+					<p class="dupla"><img src="corpo/corpo02.png">
+					<img src="corpo/corpo03.png"></p>
+					<p class="dupla"><img src="corpo/corpo04.png">
+					<img src="corpo/corpo05.png"></p>
+					<p class="dupla"><img src="corpo/corpo06.png">
+					<img src="corpo/corpo07.png"></p>
+					<p class="dupla"><img src="corpo/corpo08.png">
+					<img src="corpo/corpo09.png"></p>
+					<p class="dupla"><img src="corpo/corpo10.png">
+					<img src="corpo/corpo11.png"></p>
+					<p class="dupla"><img src="corpo/corpo12.png">
+					<img src="corpo/corpo13.png"></p>
+					<p class="dupla"><img src="corpo/corpo14.png">
+					<img src="corpo/corpo15.png"></p>
+					<p><img src="corpo/corpo16.png"></p>
+				  
+			  </div>
+			  
+			  <h1 style="color:#BAF484;">Como não ter gênero: <button onclick="Esconde('genero')">Mostrar</button></h1>
+			  
+			  <div id="genero">
+					
+					<p><img src="genero/gênero01.png"></p>
+					<p class="dupla"><img src="genero/gênero02.png">
+					<img src="genero/gênero03.png"></p>
+					<p class="dupla"><img src="genero/gênero04.png">
+					<img src="genero/gênero05.png"></p>
+					<p class="dupla"><img src="genero/gênero06.png">
+					<img src="genero/gênero07.png"></p>
+					<p class="dupla"><img src="genero/gênero08.png">
+					<img src="genero/gênero09.png"></p>
+					<p class="dupla"><img src="genero/gênero10.png">
+					<img src="genero/gênero11.png"></p>
+					<p class="dupla"><img src="genero/gênero12.png">
+					<img src="genero/gênero13.png"></p>
+					<p class="dupla"><img src="genero/gênero14.png">
+					<img src="genero/gênero15.png"></p>
+					<p><img src="genero/gênero16.png"></p>
+			  </div>
+			  
+			  <h1 style="color:#39AEDE;">Como não existir: <button onclick="Esconde('cerebro')">Mostrar</button></h1>
+			  
+			  <div id="cerebro">
+					
+					<p><img src="cerebro/cerebro01.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro02.png">
+					<img src="cerebro/cerebro03.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro04.png">
+					<img src="cerebro/cerebro05.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro06.png">
+					<img src="cerebro/cerebro07.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro08.png">
+					<img src="cerebro/cerebro09.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro10.png">
+					<img src="cerebro/cerebro11.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro12.png">
+					<img src="cerebro/cerebro13.png"></p>
+					<p class="dupla"><img src="cerebro/cerebro14.png">
+					<img src="cerebro/cerebro15.png"></p>
+					<p><img src="cerebro/cerebro16.png"></p>
+			  </div>
+		</div> 
 
-	  <div id="corpo">
-		  		<h1 style="color:#682A00;">Como não ter corpo</h1>
-			    <p><img src="corpo/corpo01.png"></p>
-			    <p class="dupla"><img src="corpo/corpo02.png">
-			    <img src="corpo/corpo03.png"></p>
-				<p class="dupla"><img src="corpo/corpo04.png">
-			    <img src="corpo/corpo05.png"></p>
-			    <p class="dupla"><img src="corpo/corpo06.png">
-		 		<img src="corpo/corpo07.png"></p>
-			    <p class="dupla"><img src="corpo/corpo08.png">
-			    <img src="corpo/corpo09.png"></p>
-				<p class="dupla"><img src="corpo/corpo10.png">
-			    <img src="corpo/corpo11.png"></p>
-			    <p class="dupla"><img src="corpo/corpo12.png">
-			    <img src="corpo/corpo13.png"></p>
-			    <p class="dupla"><img src="corpo/corpo14.png">
-			    <img src="corpo/corpo15.png"></p>
-			    <p><img src="corpo/corpo16.png"></p>
-		  
-	  </div>
+
   </main>
+	<script>
+	function Esconde(id) {
+	  var x = document.getElementById(id);
+	  if (x.style.display === "none") {
+		x.style.display = "block";
+	  } else {
+		x.style.display = "none";
+	  }
+	}
+	</script>
 </body>
 </html>
 
