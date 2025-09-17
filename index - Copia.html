@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Chagas - Psicólogo</title>
+    <!-- Importa a fonte 'Inter' do Google Fonts para um visual moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIÁVEIS DE CORES GLOBAIS --- */
+        /* Usar variáveis torna mais fácil mudar o tema do site inteiro, alterando apenas um lugar. */
+        :root {
+            --bg-color: #000000;      /* Cor de fundo da página */
+            --card-color: #BABABA;   /* Cor de fundo dos cartões */
+            --text-color: #FFFFFF;   /* Cor do texto principal (fora dos cartões) */
+            --primary-color: #BAF484;/* Cor de destaque (usada na borda do avatar) */
+            --border-color: #FFFFFF; /* Cor das bordas dos cartões e botões */
+        }
+
+        /* --- ESTILOS GERAIS DO CORPO E DO CONTAINER --- */
+        body {
+            font-family: 'Inter', sans-serif; /* Define a fonte padrão */
+            margin: 0;
+            padding: 2rem 1rem; /* Espaçamento interno para não colar nas bordas da tela */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex; /* Flexbox para centralizar o conteúdo */
+            justify-content: center;
+            align-items: flex-start; /* Alinha o conteúdo no topo */
+            min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura inteira da tela */
+        }
+
+        /* O container principal que segura todo o conteúdo e limita sua largura. */
+        .container {
+            max-width: 960px; /* Largura máxima do conteúdo */
+            width: 100%;
+            text-align: center;
+        }
+
+        /* --- CABEÇALHO --- */
+        .profile-header {
+            margin-bottom: 2rem; /* Espaço abaixo do cabeçalho */
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Deixa a imagem redonda */
+            border: 3px solid var(--primary-color); /* Borda com a cor de destaque */
+            margin-bottom: 1rem;
+            object-fit: cover; /* Garante que a imagem não se distorça */
+        }
+
+        .profile-header h1 {
+            margin: 0;
+            font-size: 1.75rem;
+        }
+
+        .profile-header p {
+            margin: 0.25rem 0 0;
+            font-size: 1rem;
+            color: var(--card-color);
+        }
+
+        /* --- ESTRUTURA PRINCIPAL (LAYOUT DE DUAS COLUNAS) --- */
+        main {
+            display: flex;
+            justify-content: space-between; /* Coloca espaço entre as colunas */
+            flex-wrap: wrap; /* Permite que as colunas quebrem para uma linha abaixo em telas menores */
+            align-items: flex-start; /* Alinha os cards no topo de suas colunas */
+        }
+
+        .column {
+            width: 48%; /* Define a largura de cada coluna para criar o layout de duas colunas */
+        }
+        
+        /* --- ESTILO DOS CARDS (CAIXAS DE CONTEÚDO) --- */
+        .card {
+            background-color: var(--card-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px; /* Cantos arredondados */
+            padding: 1.5rem;
+            margin-bottom: 1.5rem; /* Espaço entre os cards */
+            text-align: left;
+            color: #000000; /* Cor do texto dentro dos cards */
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: #000000;
+            border-bottom: 1px solid #999; /* Linha divisória abaixo do título */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none; /* Remove os marcadores padrão da lista */
+            padding: 0;
+            margin: 0;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Adiciona um marcador de bolinha personalizado à lista */
+        .card ul li::before {
+            content: '•';
+            color: #000000;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Estilo para links dentro dos cards */
+        .card a {
+            color: #000000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .card a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+        }
+
+        /* --- ESTILO DOS BOTÕES DE LINK --- */
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Uma coluna de botões */
+            gap: 1rem; /* Espaço entre os botões */
+        }
+
+        a.link-button {
+            display: block;
+            padding: 1rem;
+            background-color: #999999; /* Cor de fundo customizada para os botões */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.2s ease; /* Animação suave */
+        }
+
+        /* Efeito ao passar o mouse sobre os botões */
+        a.link-button:hover {
+            background-color: #ADADAD; /* Cor de fundo mais clara */
+            border-color: var(--border-color);
+            transform: translateY(-3px); /* Leve elevação do botão */
+        }
+        
+        /* --- ESTILO DO ESPAÇO RESERVADO PARA ARTE --- */
+        .art-placeholder {
+            border: 2px dashed #888; /* Borda pontilhada */
+            background-color: transparent; /* Fundo transparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--card-color);
+        }
+        
+        /* --- AJUSTE PARA TELAS MENORES (RESPONSIVIDADE) --- */
+        /* Este bloco de código só é aplicado quando a tela tem 768 pixels de largura ou menos (ex: celulares). */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column; /* As colunas ficam uma sobre a outra */
+            }
+
+            .column {
+                width: 100%; /* Cada coluna ocupa a largura total */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- O container principal que envolve todo o conteúdo visível -->
+    <div class="container">
+        
+        <!-- CABEÇALHO: Contém a foto de perfil, nome e subtítulo -->
+        <header class="profile-header">
+            <img src="https://placehold.co/120x120/000000/BAF484?text=PC" alt="Foto de Perfil de Pedro Chagas" class="avatar">
+            <h1>Pedro do Nascimento Chagas</h1>
+            <p>Psicólogo - CRP 05/77098</p>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL: Divide a página em duas colunas -->
+        <main>
+            
+            <!-- COLUNA ESQUERDA -->
+            <div class="column">
+                <div class="card">
+                    <h2>Sobre mim</h2>
+                    <p>Formado pela Universidade Federal Fluminense em Rio das Ostras - RJ.</p>
+                    <ul>
+                        <li>Clínica fenomenológico existencial</li>
+                        <li>Psicoterapia Online - Adolescentes e Adultos</li>
+                        <li>Psicólogo - CRAS Lagomar, Macaé-RJ</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Áreas de interesse</h2>
+                    <ul>
+                        <li>Raça e negritude</li>
+                        <li>Autismo, TDAH e neurodivergências</li>
+                        <li>Gênero, sexualidade e vivências LGBT</li>
+                        <li>Estresse e Ansiedade</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2>Leituras Recomendadas</h2>
+                    <p>Uma futura página com artigos, livros e outras leituras que recomendo.</p>
+                </div>
+
+                <div class="card art-placeholder">
+                    <p>Espaço reservado para sua arte</p>
+                </div>
+            </div>
+
+            <!-- COLUNA DIREITA -->
+            <div class="column">
+                <div class="card">
+                    <h2>Contato</h2>
+                    <p><strong>Email:</strong> <a href="mailto:pedronc.psi@gmail.com">pedronc.psi@gmail.com</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+5522997365995">(22) 99736-5995</a></p>
+                </div>
+
+                <div class="card">
+                    <h2>Outros Contatos / Recomendações</h2>
+                    <p>Aqui você pode listar outros profissionais ou serviços que recomenda.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Links</h2>
+                    <div class="links-grid">
+                        <a class="link-button" href="https://instagram.com/pedrochagas.psi" target="_blank">Instagram</a>
+                        <a class="link-button" href="https://www.linkedin.com/in/pedronchagas/" target="_blank">LinkedIn</a>
+                        <a class="link-button" href="https://wa.me/5522997635549?text=Ol%C3%A1%21+Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+atendimento%21" target="_blank">WhatsApp</a>
+                        <a class="link-button" href="http://lattes.cnpq.br/8074806225892694" target="_blank">Currículo Lattes</a>
+                        <a class="link-button" href="https://bento.me/pedropsi" target="_blank">Outros Links (Bento)</a>
+                    </div>
+                </div>
+                
+                <div class="card art-placeholder">
+                    <p>Espaço reservado para sua arte</p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- RODAPÉ: Informações de copyright -->
+        <footer>
+            <p>&copy; 2025 Pedro do Nascimento Chagas. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
+
