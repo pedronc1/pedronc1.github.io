@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Favicon (ícone da aba do navegador) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <style>
         /* --- VARIÁVEIS DE CORES GLOBAIS --- */
         /* Usar variáveis torna mais fácil mudar o tema do site inteiro, alterando apenas um lugar. */
@@ -53,10 +56,10 @@
             z-index: 0; /* Fica acima do fundo do body, mas abaixo do conteúdo */
 
             background: linear-gradient(
-                135deg,       /* Ângulo da diagonal */
-				rgba(0, 0, 0, 0) 35%, /* Metade transparente */
-                #000000 45%,  /* Metade preta */
-                rgba(0, 0, 0, 0) 55% /* Metade transparente */
+                135deg,
+                rgba(0, 0, 0, 0) 35%, /* Metade transparente */
+                #000000 45%,         /* Metade preta */
+                rgba(0, 0, 0, 0) 55%  /* Metade transparente */
             );
             background-size: 250% 250%; /* Tamanho grande para a animação de varredura */
             animation: backgroundWipe 8s linear infinite; /* Aplica a animação */
@@ -175,13 +178,15 @@
         /* --- ESTILO DOS BOTÕES DE LINK --- */
         .links-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Uma coluna de botões */
+            grid-template-columns: 1fr 1fr; /* Duas colunas de botões */
             gap: 1rem; /* Espaço entre os botões */
         }
 
         a.link-button {
             display: flex;
-			align-items: center;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem; /* Espaço entre ícone e texto */
             padding: 1rem;
             background-color: rgba(255, 255, 255, 0.15); /* Cor de fundo dos botões (um pouco mais opaca) */
             border: 1px solid var(--border-color);
@@ -192,6 +197,14 @@
             transition: transform 0.2s ease, background-color 0.2s ease; /* Animação suave */
         }
 
+        a.link-button svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0; /* Impede que o ícone seja esmagado */
+            stroke: currentColor; /* Herda a cor do texto (branco) */
+            fill: none; /* A maioria dos ícones é apenas contorno */
+        }
+        
         /* Efeito ao passar o mouse sobre os botões */
         a.link-button:hover {
             background-color: rgba(255, 255, 255, 0.25); /* Fundo mais claro no hover */
@@ -229,6 +242,10 @@
 
             .column {
                 width: 100%; /* Cada coluna ocupa a largura total */
+            }
+            /* Para telas pequenas, os botões voltam a ter uma coluna para não ficarem espremidos */
+            .links-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -276,7 +293,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="-144.png" alt="Uma segunda pintura com estilo abstrato" style="width: 100%; border-radius: 8px; display: block;">
+                    <img src="-144.png" alt="Uma pintura com estilo abstrato" style="width: 100%; border-radius: 8px; display: block;">
                 </div>
             </div>
 
@@ -285,50 +302,57 @@
                 <div class="card">
                     <h2>Contato</h2>
                     <p><strong>Email:</strong> <a href="mailto:pedronc.psi@gmail.com">pedronc.psi@gmail.com</a></p>
-                    <p><strong>Telefone:</strong> <a href="tel:+5522997365995">(22) 99736-5995</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+5522997635549">(22) 99763-5549</a></p>
                 </div>
 
                 <div class="card">
                     <h2>Outros Contatos / Recomendações</h2>
                     <p>Profissionais e psicólogos que confio e recomendo.</p>
-					<p>
-						<a class="link-button" href="https://psiclorama.com.br" target="_blank">
-						<svg width="24px" height="24px" stroke-width="1.8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-						<span>Luiz Viviani Ferraz CRP 05/83226</span>
+                     <div class="links-grid" style="margin-top: 1rem; grid-template-columns: 1fr;">
+                        <a class="link-button" href="https://psiclorama.com.br" target="_blank">
+                            <svg stroke-width="1.8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Luiz Viviani Ferraz CRP 05/83226</span>
+                        </a>
+						<a class="link-button" href="https://www.instagram.com/psi.mariaclaracarvalhom/" target="_blank">
+                            <svg stroke-width="1.8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Maria Clara Carvalho Mello CRP 05/77178</span>
+                        </a>
+						<a class="link-button" href="https://www.instagram.com/psi.nayaram/" target="_blank">
+                            <svg stroke-width="1.8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Nayara Mesquita CRP 05/77114</span>
+                        </a>
+						<a class="link-button" href="https://www.instagram.com/queldonega/" target="_blank">
+                            <svg stroke-width="1.8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Raquel Donegá CRP 05/77092</span>
+                        </a>
 						
-						<svg width="2em" height="1.2em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M3 20.2895V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V15C21 16.1046 20.1046 17 19 17H7.96125C7.35368 17 6.77906 17.2762 6.39951 17.7506L4.06852 20.6643C3.71421 21.1072 3 20.8567 3 20.2895Z" stroke="#ffffff" stroke-width="1.5"></path></svg>
-						
-						</a>
-					</p>
+					
+                    </div>
                 </div>
 
                 <div class="card">
                     <h2>Links</h2>
                     <div class="links-grid">
                         <a class="link-button" href="https://instagram.com/pedrochagas.psi" target="_blank">
-						<svg width="2em" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="#ffffff" stroke-width="1.8"></path><path d="M17.5 6.51L17.51 6.49889" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-						<span>Instagram</span>
-						
-						</a>
+                            <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"></path><path d="M17.5 6.51L17.51 6.49889" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Instagram</span>
+                        </a>
                         <a class="link-button" href="https://www.linkedin.com/in/pedronchagas/" target="_blank">
-						<svg width="2em" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17V13.5V10" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 7.01L7.01 6.99889" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-						<span>LinkedIn</span>
-						</a>
-						
+                            <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17V13.5V10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 7.01L7.01 6.99889" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>LinkedIn</span>
+                        </a>
                         <a class="link-button" href="https://wa.me/5522997635549?text=Ol%C3%A1%21+Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+atendimento%21" target="_blank">
-						<svg width="2em" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M22 12C22 17.5228 17.5228 22 12 22C10.1786 22 8.47087 21.513 7 20.6622L2 21.5L2.83209 16C2.29689 14.7751 2 13.4222 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12.9604 13.8683L15.0399 13.4624L17 14.2149V16.0385C17 16.6449 16.4783 17.1073 15.8901 16.9783C14.3671 16.6444 11.5997 15.8043 9.67826 13.8683C7.84859 12.0248 7.22267 9.45734 7.01039 8.04128C6.92535 7.47406 7.3737 7 7.94306 7H9.83707L10.572 8.96888L10.1832 11.0701" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-						<span>WhatsApp</span>	
-						</a>
-						
+                            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 17.5228 17.5228 22 12 22C10.1786 22 8.47087 21.513 7 20.6622L2 21.5L2.83209 16C2.29689 14.7751 2 13.4222 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12.9604 13.8683L15.0399 13.4624L17 14.2149V16.0385C17 16.6449 16.4783 17.1073 15.8901 16.9783C14.3671 16.6444 11.5997 15.8043 9.67826 13.8683C7.84859 12.0248 7.22267 9.45734 7.01039 8.04128C6.92535 7.47406 7.3737 7 7.94306 7H9.83707L10.572 8.96888L10.1832 11.0701" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>WhatsApp</span>
+                        </a>
                         <a class="link-button" href="http://lattes.cnpq.br/8074806225892694" target="_blank">
-						<svg width="2em" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M2.57331 8.46334L11.2317 4.13416C11.4006 4.04971 11.5994 4.04971 11.7683 4.13416L20.4267 8.46334C20.8689 8.68446 20.8689 9.31554 20.4267 9.53666L11.7683 13.8658C11.5994 13.9503 11.4006 13.9503 11.2317 13.8658L2.57331 9.53666C2.13108 9.31554 2.13108 8.68446 2.57331 8.46334Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.5 13L22.5 9.5L20.5 8.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.5 10.5V15.9121C4.5 16.6843 4.94459 17.3876 5.6422 17.7188L10.6422 20.0928C11.185 20.3505 11.815 20.3505 12.3578 20.0928L17.3578 17.7188C18.0554 17.3876 18.5 16.6843 18.5 15.9121V10.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-						<span>Currículo Lattes</span>
-						</a>
-						
+                            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.57331 8.46334L11.2317 4.13416C11.4006 4.04971 11.5994 4.04971 11.7683 4.13416L20.4267 8.46334C20.8689 8.68446 20.8689 9.31554 20.4267 9.53666L11.7683 13.8658C11.5994 13.9503 11.4006 13.9503 11.2317 13.8658L2.57331 9.53666C2.13108 9.31554 2.13108 8.68446 2.57331 8.46334Z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22.5 13L22.5 9.5L20.5 8.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.5 10.5V15.9121C4.5 16.6843 4.94459 17.3876 5.6422 17.7188L10.6422 20.0928C11.185 20.3505 11.815 20.3505 12.3578 20.0928L17.3578 17.7188C18.0554 17.3876 18.5 16.6843 18.5 15.9121V10.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Currículo Lattes</span>
+                        </a>
                         <a class="link-button" href="https://bento.me/pedropsi" target="_blank">
-						<svg width="2em" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M14 11.9976C14 9.5059 11.683 7 8.85714 7C8.52241 7 7.41904 7.00001 7.14286 7.00001C4.30254 7.00001 2 9.23752 2 11.9976C2 14.376 3.70973 16.3664 6 16.8714C6.36756 16.9525 6.75006 16.9952 7.14286 16.9952" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11.9976C10 14.4893 12.317 16.9952 15.1429 16.9952C15.4776 16.9952 16.581 16.9952 16.8571 16.9952C19.6975 16.9952 22 14.7577 22 11.9976C22 9.6192 20.2903 7.62884 18 7.12383C17.6324 7.04278 17.2499 6.99999 16.8571 6.99999" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-						<span>Bento.me</span>
-						</a>
+                            <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 11.9976C14 9.5059 11.683 7 8.85714 7C8.52241 7 7.41904 7.00001 7.14286 7.00001C4.30254 7.00001 2 9.23752 2 11.9976C2 14.376 3.70973 16.3664 6 16.8714C6.36756 16.9525 6.75006 16.9952 7.14286 16.9952" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11.9976C10 14.4893 12.317 16.9952 15.1429 16.9952C15.4776 16.9952 16.581 16.9952 16.8571 16.9952C19.6975 16.9952 22 14.7577 22 11.9976C22 9.6192 20.2903 7.62884 18 7.12383C17.6324 7.04278 17.2499 6.99999 16.8571 6.99999" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Bento.me</span>
+                        </a>
                     </div>
                 </div>
                 
