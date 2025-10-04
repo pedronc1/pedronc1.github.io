@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Pedro Chagas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        /* --- VARIÁVEIS DE CORES GLOBAIS --- */
+        :root {
+            --bg-color: #000000;
+            --card-bg-color: rgba(255, 255, 255, 0.1);
+            --text-color: #FFFFFF;
+            --primary-color: #BAF484;
+            --border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- ESTILOS GERAIS DO CORPO E DO CONTAINER --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            
+            background-image: url("fundo.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* --- ANIMAÇÃO DO FUNDO --- */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+
+            background: linear-gradient(
+                135deg,
+                rgba(0, 0, 0, 0) 35%,
+                #000000 45%,
+                rgba(0, 0, 0, 0) 55%
+            );
+            background-size: 250% 250%;
+            animation: backgroundWipe 8s linear infinite;
+        }
+
+        @keyframes backgroundWipe {
+            0% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        /* O container principal que segura todo o conteúdo e limita sua largura. */
+        .container {
+            max-width: 960px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- CABEÇALHO --- */
+        .profile-header {
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .profile-header h1 {
+            margin: 0;
+            font-size: 1.75rem;
+        }
+
+        .profile-header p {
+            margin: 0.25rem 0 0;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        /* --- ESTRUTURA PRINCIPAL (LAYOUT DE UMA COLUNA PARA O BLOG) --- */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* --- ESTILO DOS CARDS (POSTS DO BLOG) --- */
+        .card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            color: var(--text-color);
+            width: 80%;
+            max-width: 720px; /* Largura máxima para boa legibilidade */
+            
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .card h2 { /* Título do post */
+            margin-top: 0;
+            font-size: 1.75rem;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card h3 { /* Subtítulo do post */
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p { /* Parágrafos do post */
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .card .post-date { /* Estilo para a data do post */
+            font-style: italic;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .card blockquote { /* Estilo para citações */
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-left: 0;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        /* --- AJUSTE PARA TELAS MENORES (RESPONSIVIDADE) --- */
+        @media (max-width: 768px) {
+            .card {
+                width: 95%; /* Em telas menores, o card ocupa mais espaço */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <header class="profile-header">
+            <img src="eu.png" alt="Foto de Perfil de Pedro Chagas" class="avatar">
+            <h1>Blog de Pedro Chagas</h1>
+            <p>Psicólogo - CRP 05/77098</p>
+        </header>
+
+        <main>
+
+            <div class="card" style="background-color: rgba(186, 244, 132, 0.15);">
+                <h2>Como Adicionar um Novo Post</h2>
+                <p>Para criar uma nova postagem, basta copiar e colar o bloco de código "MODELO DE POSTAGEM" abaixo deste card de instruções. Altere o conteúdo dentro das tags para formatar seu texto.</p>
+                <ul>
+                    <li><code>&lt;h2&gt;...&lt;/h2&gt;</code> para o <strong>título principal</strong> (equivale a # em Markdown).</li>
+                    <li><code>&lt;h3&gt;...&lt;/h3&gt;</code> para <strong>subtítulos</strong> (equivale a ## em Markdown).</li>
+                    <li><code>&lt;p&gt;...&lt;/p&gt;</code> para <strong>parágrafos</strong>.</li>
+                    <li><code>&lt;strong&gt;...&lt;/strong&gt;</code> para <strong>negrito</strong> (equivale a **texto**).</li>
+                    <li><code>&lt;em&gt;...&lt;/em&gt;</code> para <strong>itálico</strong> (equivale a *texto*).</li>
+                    <li><code>&lt;blockquote&gt;...&lt;/blockquote&gt;</code> para <strong>citações</strong> (equivale a > texto).</li>
+                    <li><code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> para <strong>listas</strong> (equivale a - item).</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>Título da Sua Postagem</h2>
+                <p class="post-date">3 de Outubro de 2025</p>
+
+                <p>
+                    Este é um parágrafo de texto normal. Você pode escrever o quanto quiser aqui. Para criar um novo parágrafo, basta envolvê-lo em novas tags <code>&lt;p&gt;</code> e <code>&lt;/p&gt;</code>.
+                </p>
+
+                <p>
+                    Você pode adicionar ênfase ao seu texto usando <strong>negrito</strong> para palavras importantes ou <em>itálico</em> para destacar ideias.
+                </p>
+
+                <h3>Este é um Subtítulo</h3>
+                <p>
+                    Use subtítulos para organizar seu texto em seções, tornando a leitura mais fácil e agradável para o visitante.
+                </p>
+
+                <blockquote>
+                    "Esta é uma citação. Use este bloco para destacar frases de autores, pacientes (de forma anônima) ou qualquer trecho que mereça atenção especial."
+                </blockquote>
+
+                <h3>Exemplo de Lista</h3>
+                <ul>
+                    <li>Este é o primeiro item de uma lista.</li>
+                    <li>Este é o segundo item.</li>
+                    <li>E assim por diante.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Bem-vindo ao Meu Blog!</h2>
+                <p class="post-date">3 de Outubro de 2025</p>
+                <p>
+                    É com grande satisfação que inauguro este espaço. A intenção aqui é compartilhar reflexões, leituras e pensamentos sobre psicologia, cultura e os diversos aspectos que compõem a nossa existência.
+                </p>
+                <p>
+                    Este será um lugar para aprofundar discussões que muitas vezes começam no consultório, mas que merecem ecoar. Sinta-se à vontade para ler, refletir e, quem sabe, encontrar novas perspectivas.
+                </p>
+            </div>
+
+
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Pedro do Nascimento Chagas.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
