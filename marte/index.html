@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Arte - Efeito de Vidro</title>
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte Inter do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            /* --- IMAGEM DE FUNDO (ESSENCIAL PARA O EFEITO) --- */
+            background-image: url('fundo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Estilo para um visual mais limpo, escondendo a barra de rolagem */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* --- O EFEITO DE VIDRO APLICADO AOS QUADROS DA GALERIA --- */
+        .glass-frame {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- ESTILOS PARA O MODAL (VISUALIZAÇÃO EM TELA CHEIA) --- */
+        /* Transição suave para o modal */
+        #imageModal {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+        <!-- Cabeçalho com o título da galeria -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Minha Galeria de Arte</h1>
+            <p class="text-lg text-gray-300 mt-2">Um portfólio visual das minhas obras. Role para o lado e clique para ampliar.</p>
+        </header>
+
+        <!-- Seção da Galeria -->
+        <section class="flex overflow-x-auto space-x-6 md:space-x-8 pb-8 no-scrollbar">
+            
+            <!-- Obra de Arte 1 -->
+            <div class="flex-shrink-0 group">
+                <div onclick="openModal(this.querySelector('img').src)" class="w-72 md:w-80 h-96 glass-frame rounded-xl overflow-hidden cursor-pointer">
+                    <img src="grude.jpg" alt="Obra de arte abstrata com tons de vermelho e texturas" class="w-full h-full object-cover transform transition-all duration-300 group-hover:scale-105">
+                </div>
+                <div class="mt-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-bold text-lg text-white">Grude</h3>
+                    <p class="text-sm text-gray-400">Acrílica sobre tela, 2024</p>
+                </div>
+            </div>
+
+            <!-- Obra de Arte 2 -->
+            <div class="flex-shrink-0 group">
+                <div onclick="openModal(this.querySelector('img').src)" class="w-72 md:w-80 h-96 glass-frame rounded-xl overflow-hidden cursor-pointer">
+                    <img src="-144.png" alt="Obra de arte com formas geométricas e cores vibrantes" class="w-full h-full object-cover transform transition-all duration-300 group-hover:scale-105">
+                </div>
+                <div class="mt-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-bold text-lg text-white">-144</h3>
+                    <p class="text-sm text-gray-400">Arte digital, 2023</p>
+                </div>
+            </div>
+
+            <!-- Obra de Arte 3 -->
+            <div class="flex-shrink-0 group">
+                 <div onclick="openModal(this.querySelector('img').src)" class="w-72 md:w-80 h-96 glass-frame rounded-xl overflow-hidden cursor-pointer">
+                    <img src="https://placehold.co/400x600/718096/ffffff?text=Sua+Arte+3" alt="Descrição da Obra 3" class="w-full h-full object-cover transform transition-all duration-300 group-hover:scale-105">
+                </div>
+                <div class="mt-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-bold text-lg text-white">Título da Obra 3</h3>
+                    <p class="text-sm text-gray-400">Técnica, Ano</p>
+                </div>
+            </div>
+
+            <!-- Obra de Arte 4 -->
+            <div class="flex-shrink-0 group">
+                <div onclick="openModal(this.querySelector('img').src)" class="w-72 md:w-80 h-96 glass-frame rounded-xl overflow-hidden cursor-pointer">
+                    <img src="https://placehold.co/400x600/a0aec0/000000?text=Sua+Arte+4" alt="Descrição da Obra 4" class="w-full h-full object-cover transform transition-all duration-300 group-hover:scale-105">
+                </div>
+                <div class="mt-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-bold text-lg text-white">Título da Obra 4</h3>
+                    <p class="text-sm text-gray-400">Técnica, Ano</p>
+                </div>
+            </div>
+
+            <!-- Obra de Arte 5 -->
+            <div class="flex-shrink-0 group">
+                <div onclick="openModal(this.querySelector('img').src)" class="w-72 md:w-80 h-96 glass-frame rounded-xl overflow-hidden cursor-pointer">
+                    <img src="https://placehold.co/400x600/cbd5e0/000000?text=Sua+Arte+5" alt="Descrição da Obra 5" class="w-full h-full object-cover transform transition-all duration-300 group-hover:scale-105">
+                </div>
+                 <div class="mt-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-bold text-lg text-white">Título da Obra 5</h3>
+                    <p class="text-sm text-gray-400">Técnica, Ano</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para visualização da imagem em tela cheia -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex justify-center items-center hidden z-50 p-4">
+        <img id="modalImage" src="" alt="Arte em tela cheia" class="max-w-full max-h-full object-contain rounded-lg">
+        <button id="closeModalBtn" class="absolute top-4 right-6 text-white text-5xl font-bold hover:text-gray-300 transition-colors">&times;</button>
+    </div>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        function openModal(src) {
+            modalImage.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Impede o scroll do fundo
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaura o scroll
+        }
+
+        // Event Listeners
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Fecha o modal ao clicar no fundo (overlay)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Fecha o modal com a tecla 'Esc'
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
+
