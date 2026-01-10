@@ -1,0 +1,720 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Vantagens</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1b920c7d-c14d-8099-85b1-e400ada81dbb" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_fingerprints_of_water_on_the_sand.jpg" style="object-position:center 60%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Vantagens/0311Plusle.png"/></div><h1 class="page-title" dir="auto">Vantagens</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="1b920c7d-c14d-8014-b5d3-e029c36ce4bb" class="">Vantagens de Antecedente</h1></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ae-bca8-ce3634b16171" class=""><mark class="highlight-gray">Geralmente estas são Vantagens inatas a cada personagem, aprendidas através de um treinamento extenso e prolongado ou adquiridas após a exposição a certos eventos. Desde que tenham uma boa explicação, é possível escolher essas Vantagens depois da criação de personagem. Pode-se escolher a Vantagem Atraente, por exemplo, se limpando, com uma boa maquiagem ou cuidando melhor da sua aparência. </mark></p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-801b-b930-f91e98f114dc"/></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80de-95d7-dfa4a368d9ad" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>AMBIDESTRO</strong></mark><br/>REQUISITOS: Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8053-95b4-e9bcaf63905f" class=""><em>Sua habilidade com as mãos esquerda e direita é igual e a penalidade Mão Inábil (veja pág. 115) é ignorada.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f9-923b-fe2cab5340c7" class=""><em>Se estiverem empunhando uma arma em cada mão, personagens com esta Vantagem podem acumular os bônus de Aparar de ambas as armas (se houverem bônus).</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8044-bcdf-e1d00aa05d84" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ARISTOCRATA<br/></strong></mark>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-802f-8663-cdb3f709bf02" class="">Este indivíduo nasceu com privilégios ou os adquiriu ao longo da vida. Pode ter dinheiro ou não (Vantagem Rico ou Podre de Rico), mas ainda anda no círculo social da elite dentro do cenário.<br/>Aristocratas adicionam +2 em Persuadir quando em uma Rede de Contatos (veja pág. 160) com a elite local, industriais, nobres ou demais aristocratas. Também adicionam +2 em rolagens de Conhecimento Geral feitas para conhecer a etiqueta da elite, reconhecer ramos familiares e heráldica ou rumores envolvendo outros de sua posição.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-805a-9a89-f45655fc1c7d" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ATRAENTE</strong></mark><br/>REQUISITOS: Novato, Vigor d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801d-828f-e62a2000c0a7" class="">Não é segredo que as pessoas ficam mais dispostas a ajudar quem consideram fisicamente atraentes. Adicione +1 em rolagens de Performance e Persuadir se o alvo estiver atraído pelo seu tipo em geral (gênero, sexo, espécie etc.).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8052-9dd3-d0164198328e" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>MUITO ATRAENTE<br/></strong></mark>REQUISITOS: Novato, Atraente</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-809c-b08f-ebca2425c27f" class="">Sua personagem é linda de morrer. Seu bônus em Performance e Persuadir aumenta para +2..</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8050-b2f9-c471538292b0" class=""><br/>BRUTAMONTES<br/>REQUISITOS: Novato, Força d6+,<br/>Vigor d6+<br/>Brutamontes se focam em força e capacidade<br/>física no lugar de coordenação e flexibilidade.<br/>Tratam Atletismo como se ela estivesse<br/>ligada a Força no lugar de Agilidade para<br/>propósitos de Progresso. Também podem<br/>resistir a Desafios de Atletismo com força,<br/>se desejarem.<br/>Por fim, Brutamontes aumentam em +1 a<br/>Curta Distância de qualquer item arremes-<br/>sado. Dobre isso para a Média Distância<br/>ajustada e dobre novamente para a Longa<br/>Distância. Se a Distância de um item arre-<br/>messado for 3/6/12, por exemplo, a Distância<br/>para o Brutamontes é 4/8/16.<br/>CARISMÁTICO<br/>REQUISITOS: Novato, Espírito d8+<br/>Confere simpatia por alguma razão. Pode<br/>ser confiável, agir com bondade ou apenas<br/>pode transparecer confiança e boa vontade.<br/>Você tem uma rerrolagem gratuita em<br/>rolagens de Persuadir.<br/>CORAJOSO<br/>REQUISITOS: Novato, Espírito d6+<br/>Quem possui esta Vantagem aprendeu a<br/>dominar seus medos ou lidou com tantos<br/>horrores que acabou se habituando. Estas<br/>figuras valentes e exploradoras adicionam<br/>+2 em Testes de Medo e subtraem 2 dos resul-<br/>tados da Tabela de Medo (veja pág. 140).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8083-98d5-e064f5aa7ae6" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>CURA RÁPIDA</strong></mark><br/>REQUISITOS: Novato, Vigor d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8047-8a68-e6c35b2552d0" class="">Personagens com esta bênção adicionam +2 ao Vigor em rolagens de cura natural e testam a cada três dias em vez de cinco (veja<br/>Cura, pág. 112).</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-808c-9d86-e03cd13073a8" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80cc-9ad9-e1950600c431" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80fa-baae-c89cabe06266" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8096-ba11-ff83c3f1cfaf" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>FAMOSO<br/></strong></mark>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f7-ac7d-e1f5a7016d2e" class=""><em>Personagens com essa vantagem são uma espécie de subcelebridade. Podem ter reconhecimento como membro popular da<br/>classe barda em um feudo em particular, uma estrela de rock menor ou ter atuado em um filme B.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80de-b8ac-cc7cb4338006" class=""><em>Irão ganhar o dobro do cachê normal quando estiverem realizando uma performance (veja Performance, pág. 38). Também podem usar sua fama para adicionar +1 em rolagens de Persuadir se o alvo for amigável e souber quem são (uma rolagem de Conhecimento Geral modificada pela probabilidade do indivíduo conhecer a celebridade).</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8089-b25b-dd336c4ebc66" class=""><em>A parte ruim de ser Famoso é que a personagem é geralmente reconhecida, pessoas querem algo dela com certa frequência, pode sofrer perseguição por parte de fãs ou pessoas que admirem seu trabalho, ou ainda pode não conseguir se livrar de suas obrigações, apresentações ou outras atividades sem se complicar.</em><br/></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80e9-87ee-d3086c88fbe0" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>FURIOSO</strong></mark><br/>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8062-83c2-ce768dc22373" class=""><em>Furiosos se tornam selvagens e quase incontroláveis quando ficam com “sangue nos olhos”, mas continuam sendo verdadeiras máquinas de matar!</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8076-9735-d610ffd6ad4a" class=""><em>Imediatamente após sofrer um Ferimento ou um resultado Abalado (apenas por dano físico), alguém com essa complicação deve<br/>fazer um teste de Astúcia ou fica Furioso. Você pode falhar no teste voluntariamente, se assim desejar.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80d8-98d7-ff8fc15e1cac" class=""><em>Ficar Furioso tem os seguintes efeitos:</em></p></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80b0-b56b-d528b638d82b" class="bulleted-list"><li style="list-style-type:disc"><em><mark class="highlight-teal">FÚRIA</mark></em><em>: A força aumenta em um tipo de dado e todo ataque corpo a corpo deve ser um Ataque Selvagem (veja pág. 115). Não<br/>é permitido usar perícias que requeiram inteligência ou concentração (critério do Mestre). É possível vociferar ameaças e usar Intimidar, por exemplo.</em></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-805c-8e5f-c8d4159b7284" class="bulleted-list"><li style="list-style-type:disc"><em><mark class="highlight-teal">ENRAIVECIDO</mark></em><em>: Adrenalina e raiva fortalecem os músculos de alguém Furioso, adicionando +2 em Resistência. Ignore um nível de penalidades por Ferimentos (isso se acumula com quaisquer outras habilidades que reduzam penalidades por Ferimento).</em></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-803a-9e1b-fefc82df8c9d" class="bulleted-list"><li style="list-style-type:disc"><em><mark class="highlight-teal">IMPRUDÊNCIA</mark></em><em>: Toda vez que rolar uma Falha Crítica em um teste de Lutar, acerta um alvo aleatoriamente no seu raio de ataque (não o alvo pretendido), seja amigo ou inimigo. Se não houverem alvos aplicáveis, o golpe simplesmente erra, quebra objetos próximos etc.</em></li></ul></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f5-b639-c6ecba6dbff8" class=""><em>Depois de cinco rodadas consecutivas de fúria, ocorre um nível de Fadiga. Com dez rodadas, adquire outro nível de Fadiga e a fúria termina. Também é possível escolher acabar com sua fúria a qualquer momento fazendo um teste de Astúcia -2 (como uma ação livre, possivelmente evitando a Fadiga se conseguir encerrar sua fúria antes que ocorra!). Comece uma contagem nova se entrar em fúria novamente, mesmo que seja a mesma batalha.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8030-b3cd-f64a93dbd593" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>HUMOR ÁCIDO<br/></strong></mark>REQUISITOS: Novato, Provocar d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ee-9e9d-feb13733c1d1" class=""><em>Algumas pessoas usam o humor para lidar com circunstâncias terríveis ou talvez só sejam tão duronas que podem rir na cara da morte.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8098-a773-cd5646c75800" class=""><em>Personagens com Humor Ácido podem usar sua perícia Provocar em vez de Espírito ao realizar testes de Medo (todos os modificadores se aplicam normalmente).</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b3-8c24-cd16bfec62fa" class=""><em>Se conseguir uma ampliação, o humor é tão efetivo que age como Suporte +1 para todos os aliados que realizem o mesmo teste de Medo.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-806b-a782-cc34633b1598" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>IMPLACÁVEL</strong></mark><br/>REQUISITOS: Novato, Espírito d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f0-b93d-d695b2ddf471" class=""><em>Esta personagem é realmente dedicada a derrotar o mal. Investiga onde suspeita que esteja e não tolera interferências de quem tenta atrapalhá-la.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-802b-9be8-d1efa3355e96" class=""><em>Em troca dessa implacável determinação e inabalável dedicação, estas personagens ainda podem agir com uma única ação e uma penalidade de -2 quando em Estado Abalado.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80c3-8dca-f3adc1d0d82f" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>IMPULSO</strong></mark><br/>REQUISITOS: Novato, Espírito d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8080-9cbb-df305caaf71b" class="">Impulso tem a ver com energia ou espírito. Pessoas que o possuem estão à altura da situação quando a coisa fica feia. Quando você gasta um Bene para rerrolar uma Característica, adicione +2 ao total. O bônus se aplica apenas na rerrolagem. Não se aplica a rolagens de dano (já que não são uma rolagem de Característica), também não se aplica a rolagens de Absorção a menos que você esteja usando outro Bene para rerrolar o teste de Vigor.<br/></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80df-9a1a-c2f82b5f79b5" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>LIGEIRO</strong></mark><mark class="highlight-teal"><br/></mark>REQUISITOS: Novato, Agilidade d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-807c-a72c-ceafa9e6c14d" class="">Sua Movimentação é aumentada em +2 e seu dado de corrida aumenta em um tipo (de d6 para d8, por exemplo).<br/></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-805e-874d-c407ca0b2686" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>LINGUISTA</strong></mark><br/>REQUISITOS: Novato, Astúcia d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-800f-ac3e-c6ea1e7c7ba5" class="">Esta pessoa viaja o mundo e tem um ouvido bom para idiomas. Começa o jogo já conhecendo uma quantidade de Idiomas, que iniciam em d6, igual a metade do seu dado de Astúcia (veja a perícia Idiomas na pág. 35).<br/></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80f7-aa83-d5e0ceca3524" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>MUSCULOSO</strong></mark><br/>REQUISITOS: Novato, Força d6+, Vigor d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80c3-82b0-eb0c70e47c95" class="">Esta pessoa é muito grande ou está em forma. Seu Tamanho aumenta em +1 (e também a Resistência em 1) e a Força é tratada como se fosse um tipo de dado maior para determinar Sobrecarga (pág. 77) e Força Mínima para usar armadura, armas e equipamentos sem penalidade (pág. 76). Musculoso não pode aumentar o Tamanho da personagem acima de +3.<br/></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8051-a53f-f5dab0dc07bc" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>PRONTIDÃO</strong></mark><br/>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8077-98d3-f6793a17bfa7" class="">Nada escapa à personagens com Prontidão. São bastante observadoras e adicionam +2 em seu Perceber para ouvir, ver ou sentir o mundo ao seu redor.<br/></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80c0-b5cf-f39f22f156e1" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>RÁPIDO</strong></mark><br/>REQUISITOS: Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8003-ad00-da5a41056ad9" class=""><em>Personagens com rapidez possuem reflexos ultrarrápidos e uma cabeça fria. Sempre que sacar uma Carta de Ação com um valor Cinco ou menor, você pode descartá-la e sacar novamente até que consiga uma carta mais alta do que Cinco.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8066-980d-d712fd751ad8" class=""><em>Personagens com as Vantagens Focado e Rápido sacam primeiro suas cartas adicionais e escolhem qual irão usar. Se a carta for um Cinco ou menos, a Vantagem Rápido pode ser usada para sacar uma substituta até que uma carta Seis ou maior apareça.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-801f-830b-e2ee2447edfb" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>RICO</strong></mark><br/>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-807a-8a0f-d6568ceef9c9" class="">Tendo nascido em um berço de ouro ou conquistado suas posses através de trabalho duro, quem possui essa Vantagem tem mais<br/>dinheiro que a maioria. Personagens com Riqueza iniciam com três vezes os recursos iniciais normais para o cenário. Se o cenário precisar de uma renda fixa, a pessoa recebe o equivalente moderno de um salário anual de $150.000.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8035-bd00-e1b680378710" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>PODRE DE RICO<br/></strong></mark>REQUISITOS: Novato, Rico</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8064-b2d1-c7167d4c9fe9" class=""><em>Este indivíduo afortunado é realmente rico. Possui cinco vezes os recursos iniciais para o cenário durante a criação de personagem e, se apropriado, uma renda anual líquida de cerca de $500.000.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-805c-8027-fbb4bf191c66" class=""><em>Podem existir personagens com riqueza maior ainda, mas a menos que haja um efeito dentro do jogo isso não deve importar. Isso deve ser combinado com o Mestre e vem acompanhado de mais recursos, bem como de responsabilidades onerosas.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-805a-8e37-f41b34740dcf" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>SORTE</strong></mark><br/>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8091-965c-dec69fbbb328" class="">Quem tem Sorte parece ser abençoado pelo destino, deuses ou qualquer força externa na qual acredite (ou que acredite nesta figura!). Receba um Bene adicional no início de cada sessão de jogo, de modo a ser frequentemente mais bem-sucedido que a maioria em tarefas importantes e para sobreviver a perigos incríveis.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8061-a38c-d8987a1ea23f" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>SORTE GRANDE</strong></mark><mark class="highlight-teal"><br/></mark>REQUISITOS: Novato, Sorte</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8052-b6e7-e6a276b35875" class="">Concede dois Benes adicionais no início de cada sessão em vez de um.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80e2-b373-f4f6fd93bddc" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>VETERANO DO MUNDO SOMBRIO</strong></mark><strong><br/></strong>REQUISITOS: Novato, Astúcia d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8093-99ec-ec1e3d659ff5" class="">Sua heroína ou herói já está a mais tempo nessa luta do que o resto do grupo. Talvez seja a experiência da idade ou por ter enfrentado mais do que sua cota de abominações.<br/>Veteranos do Mundo Sombrio começam o jogo no Estágio Experiente (ou um Estágio maior do que as demais personagens da campanha), lhe dando automaticamente quatro Progressos durante a criação da personagem. O preço desta experiência é a  rolagem na tabela de Veterano do Mundo Sombrio acima para decidir que infortúnios estão no passado da personagem.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8077-9ec5-c0bcb2c1f195"/></div><div style="display:contents" dir="auto"><h1 id="1b920c7d-c14d-8084-b289-c2bb52ea8db9" class="">Vantagens de Combate</h1></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-804b-8b43-f2528a1f2179" class=""><em><mark class="highlight-gray">Estas Vantagens foram criadas para ajudar a causar danos terríveis – ou sobreviver a eles – nas batalhas sangrentas de Savage Worlds.</mark></em></p></div><div style="display:contents" dir="auto"><hr id="1bc20c7d-c14d-80e1-83f9-c23a3506a761"/></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8020-865b-ddd931e6feef" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ARMA PREDILETA</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, perícia com a arma escolhida em d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-80b7-800c-f8302693c06a" class="">Alguém com essa Vantagem conhece uma arma única (Excalibur, Old Betsy, Ferroada) como a palma da sua mão. Quando a usa, pode adicionar +1 em suas rolagens de Atletismo (arremessar), Lutar ou Atirar e +1 no Aparar quando ela está preparada (mesmo que seja uma arma de combate à distância).</p></div><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8068-ba4e-ec0d12274960" class="">É permitido escolher esta Vantagem várias vezes, aplicando a uma arma diferente cada vez. Se uma Arma Predileta for perdida, é possível substituí-la, mas os benefícios não entram em vigor por alguns dias (quanto tempo o Mestre considerar dramaticamente apropriado).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80bb-bf33-f199609879c0" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ARTISTA MARCIAL</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Lutar d6+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-80f8-981a-c98b6fbb4c96" class="">Alguém com essa Vantagem tem treinamento básico em artes marciais. Considera-se que sempre está com armas, por causa do dano que pode causar com seus punhos e pés (veja Armas Naturais, pág. 114). Soma +1 quando golpeia com eles e causa Força + d4 de dano.</p></div><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8024-8bda-d51c7abbbdbe" class="">Se já possuir um dado de dano por Força pela habilidade racial Garras (pág. 20) ou pela Vantagem Brigão (pág. 47), aumente o dano em um tipo de dado.</p></div><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-80a3-ac19-d78e1d2d395b" class="">Artista Marcial não soma ao dano com outras Armas Naturais como presas ou chifres.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8014-9071-f44219debb73" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ATACAR PRIMEIRO</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-801d-a861-d2e710f243a7" class="">Uma vez por rodada, contando que não esteja em Estado Abalado ou Atordoado, quem tiver essa Vantagem ganha um ataque livre de Lutar contra um adversário imediatamente após ele entrar no seu Alcance (veja Ataques Livres na pág. 116).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80fb-92ad-f4d6b8e5e6b7" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ATIRAR COM DUAS ARMAS<br/></strong></mark><em>Requisitos:</em> Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a6-8962-e54e5227ed73" class="">Atirar com Duas Armas funciona como Lutar com Duas Armas, mas para armas de combate à distância, disparo ou arremesso de uma arma em cada mão com duas ações diferentes sem acionar a penalidade por Ações Múltiplas.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f4-81ae-fb38b8f6d0ea" class="">Se a personagem também tiver Lutar com Duas Armas, a segunda ação pode ser um ataque corpo a corpo.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8044-8a65-ec895af67240" class=""><em>Exemplo:</em> Red tem uma espada em uma mão e uma pistola na outra. Ela tem Lutar com Duas Armas e Atirar com Duas Armas, então ela pode fazer um ataque com Lutar em uma ação e então um segundo ataque também com Lutar ou pode realizar seu segundo ataque com Atirar sem sofrer penalidade por Ação Múltipla naquele turno.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8023-9239-c22417926e23" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>BRIGÃO<br/></strong></mark><em>Requisitos:</em> Novato, Força d8+, Vigor d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8048-8889-e3aee32e5ff6" class="">Seus punhos são como martelos ou suas garras cortam como facas. Seu corpo parece ser feito de pedra. Personagens com Brigão aumentam sua Resistência em 1 e rolam Força + d4 quando acertam com seus punhos ou pés (ou mesmo garras, se as tiverem). Se já tiverem um dado de dano pelas Garras (pág. 20), a Vantagem Artista Marcial, etc., aumente o tipo do dado em um, em vez disso.</p></div><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8016-a318-dea760556c8d" class="">A Vantagem Brigão não torna os punhos Armas Naturais (pág. 114).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8017-a555-d12abd9cfde6" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>CALCULISTA<br/></strong></mark><em>Requisitos:</em> Novato, Astúcia d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-802a-8854-df3289d0ed52" class="">Alguns segundos gastos estudando as ações de seu oponente conferem à personagem uma grande vantagem. Quando sua Carta de Ação é um Cinco ou menor, ignore até 2 pontos de penalidades em uma ação naquele turno, o que pode incluir Ações Múltiplas, Cobertura, Distância e até mesmo penalidades por Ferimentos.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8006-8c15-e5a2608892c0" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>CORREDOR<br/></strong></mark><em>Requisitos:</em> Novato, Agilidade d8+, Atletismo d6+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-801c-8a07-f2118cd458c8" class="">A personagem pratica “parkour” ou apenas é muito habilidosa correndo, saltando, se balançando, escalando muros e obstáculos.Enquanto houverem obstáculos pode saltar, quicar ou se balançar sobre eles, deslocando-se com sua Movimentação total em Terreno Acidentado quando a pé. Também adiciona +2 em suas rolagens de Atletismo quando escala e em Perseguições a pé (veja Perseguições e Veículos pág. 148).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-804f-8299-e3d54de9c257" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>DURO DE MATAR<br/></strong></mark><em>Requisitos:</em> Novato, Espírito d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-80d5-b5ab-ef839553978c" class="">Personagens com essa vantagem têm mais vidas que uma gataria. Ignore suas penalidades por Ferimentos em rolagens de Vigor para evitar permanecer Sangrando (veja pág. 111).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8039-93b6-c29d5a6d8ecc" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>FINTA<br/></strong></mark><em>Requisitos:</em> Novato, Lutar d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-80c7-8e48-fe0f97680640" class="">Quando realiza um Desafio (pág. 119) com a perícia Lutar, você pode escolher que um adversário resista com Astúcia em vez de Agilidade.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8046-a931-f645f4f0c2e1" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>GOLPE PODEROSO</strong></mark><strong><br/></strong><em>Requisitos:</em> Carta Selvagem, Novato, Lutar d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ac-95f5-cc1883fb62dd" class="">Se sua Carta de Ação for um Curinga, dobre o dano do seu primeiro ataque bem-sucedido com Lutar nesta rodada.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80d2-9997-c17b318e71c4" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>LUTAR COM DUAS ARMAS</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80d9-bd9a-d9ca774f5768" class="">Ao realizar duas ações de Ataque com Lutar (com mãos diferentes), o segundo ataque não inflige uma penalidade por Ação Múltipla. A penalidade por Mão Inábil ainda se aplica, a menos que seja Ambidestro (pág. 115).</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b2-b7e5-f6faa216a9cd" class="">Caso tenha Atirar com Duas Armas, a segunda ação também pode ser um ataque à distância.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8085-804d-fff1d91d51f1" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>MÃOS FIRMES</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80e2-bce7-da41fe97a2ca" class="">Disparar do lombo de um cavalo ou de um veículo em movimento é um negócio complicado, mas quem tem essa Vantagem entendeu como se faz. Ignore a penalidade por Plataforma Instável (veja pág. 124).</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8072-89b1-fa02211a1fdf" class="">Isso também ajuda durante a corrida, reduzindo a penalidade habitual de -2 para -1 (veja Movimento, pág. 107).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-806a-ace2-c5cd6df785a7" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>NERVOS DE AÇO</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Vigor d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-80df-9bbc-f855f15c0dbe" class="">Personagens que aprenderam a lutar sob a mais intensa dor. Podem ignorar 1 ponto de penalidades por Ferimento.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-801c-85b9-c81602a5a362" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>NERVOS DE AÇO APRIMORADOS</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Nervos de Aço</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8078-afb3-c25aefe30c01" class="">Ignora 2 pontos de penalidades por Ferimento.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80f4-950e-e577ffc8a4f1" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>QUEIXO DE FERRO</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Vigor d8+</summary><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8029-a1d5-f15031852e52" class="">Permite suportar até mesmo os golpes mais extremos. Adicione +2 em rolagens de Absorção e Vigor para evitar o Golpe Nocauteador (veja pág. 122).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80c1-bc62-cc32d2ec6911" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>RETIRADA</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80e8-8741-ef984c23e82f" class="">Quando alguém se retira de um combate corpo a corpo, atacantes adjacentes ganham um ataque livre de Lutar contra ele (veja Retirada de Combate Corpo a Corpo na pág. 126). É algo arriscado para a maioria, mas não para personagens com esta Vantagem.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8069-aa4d-d9a6273581b7" class="">Quando se afasta de rivais adjacentes, um deles (à sua escolha), não ganha seu ataque livre de Lutar.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80aa-9ee9-e10390a6364c" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>TIRO MORTAL</strong></mark><strong><br/></strong><em>Requisitos:</em> Carta Selvagem, Novato, Atletismo ou Atirar d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-800c-9596-cd3b4962c5de" class="">Quando sua Carta de Ação é um Curinga, dobre o seu total de dano em sua primeira rolagem bem-sucedida de Atletismo (arremessar) ou Atirar nesta rodada.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80dd-8cee-f42aeb0c3d07" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>VARREDURA</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Força d8+, Lutar d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80c4-85ff-c6d707337623" class="">Como uma ação limitada, essa vantagem permite realizar um único ataque com Lutar com uma arma de duas mãos e aplicá-lo a todos os alvos dentro do seu Alcance (rivais ou aliados). Resolva o dano separadamente para cada alvo atingido. Se não usar uma arma de duas mãos, se aplica um redutor de -2.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><h1 id="1b920c7d-c14d-800f-9fd1-c5f13945df01" class="">Vantagens de Liderança</h1></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8090-8fdb-fe62fb8a06e2" class=""><em><mark class="highlight-gray">Vantagens de Liderança concedem bônus para personagens aliadas, tornando-as mais eficientes, confiáveis ou resistentes. A menos que uma Vantagem diga o contrário, só afetam Extras aliados. Cartas Selvagens só se beneficiam se a pessoa em comando possuir a Vantagem Líder Nato. Vantagens de Liderança não são cumulativas com a mesma Vantagem de outras personagens que também as possuam.. Entretanto, personagens podem se beneficiar de Vantagens de Liderança diferentes possuídas pelas mesmas pessoas ou por várias.</mark></em></p></div><div style="display:contents" dir="auto"><hr id="1bc20c7d-c14d-80e6-b384-d850dedee949"/></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8090-83eb-faa5cb06c429" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>COMANDO</strong></mark><br/>REQUISITOS: Novato, Astúcia d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-807c-982f-dcd7dee5dfd5" class="">Comando é a habilidade básica de dar instruções claras e suporte aos aliados no calor da batalha. Extras dentro do Raio de Comando adicionam +1 para suas rolagens de Espírito quando tentam se recuperar do Estado Abalado e de Vigor para Atordoado.</p></div><div style="display:contents" dir="auto"><p id="1bc20c7d-c14d-8065-a685-e0b3157672e6" class=""><mark class="highlight-gray">Raio de Comando: Para se beneficiar dessas vantagens as personagens aliadas devem estar dentro de um raio de 5 quadros (10 metros). Isso é chamado de &quot;Raio de Comando&quot;.</mark></p></div></details></li></ul></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80f8-9c0c-c1c005fe2de0"/></div><div style="display:contents" dir="auto"><h1 id="1b920c7d-c14d-808f-982b-f972c0d8c5be" class="">Vantagens Profissionais</h1></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-800a-b5aa-f4a61459d160" class=""><em>Vantagens Profissionais refletem anos de prática ou experiência na atividade ou ofício em particular. Em alguns casos elas também podem representar bênçãos especiais vindas de poderes superiores. É permitido adquirir Vantagens Profissionais depois da criação de personagem, possivelmente interpretando tal aquisição pela prática do ofício durante seu tempo<br/>livre ou entre aventuras.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-808b-adad-fbff36e224ba" class="">Acumulando: Bônus concedidos para uma mesma Característica por diferentes Vantagens Profissionais não se acumulam. Aplique apenas o maior.</p></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8089-98db-fa6a48e93c96" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ACROBATA</strong></mark><br/>REQUISITOS: Novato, Agilidade d8+, Atletismo d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8065-8838-fd6bc7267049" class="">Acrobatas ganham uma rerrolagem gratuita em Atletismo que envolva equilíbrio, acrobacias ou agarrões. Não afeta rolagens para interromper ações, escalar, nadar ou arremessar.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8094-912a-cffba9a6e3d3" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ÁS</strong></mark><br/>REQUISITOS: Novato, Agilidade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ee-b5b4-f391fcbb4910" class="">Ases são pilotos e motoristas que têm uma afinidade especial com seu carro, barco, avião ou outro veículo. Ignoram dois pontos por penalidades para qualquer rolagem de Navegar, Dirigir ou Pilotar e podem gastar Benes para Absorver dano para qualquer veículo que eles controlem ou comandem usando a perícia apropriada entre Navegar, Dirigir ou Pilotar em vez de Vigor. Cada sucesso e ampliação negam um Ferimento.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-806d-a5db-cbfe9c416fc6" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ASSASSINO</strong></mark><br/>REQUISITOS: Novato, Agilidade d8+, Lutar d6+, Furtividade d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80fe-8e7b-d6be6a268e8d" class="">São personagens com treinamento para matar quaisquer oponentes, por mais fortes que sejam. Adicionam +2 em rolagens de dano contra rivais em Estado Vulnerável, ou quando usam a manobra Finalização.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80a3-8e6a-c916b4b2c028" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>ERUDITO</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Pesquisar d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80c3-bbdd-faf59f8933ae" class="">Mestres inteligentes, estudantes que se dedicam ou entusiastas informais gastam muito tempo e energia pesquisando sobre campos específicos. Tornam-se especialistas nesses campos e raramente falham ao responder questões em suas áreas de especialização.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f4-9972-c975e3f1cdda" class="">Escolha uma das perícias a seguir: Conhecimento Acadêmico, Conhecimento Batalha, Ocultismo, Ciência ou uma perícia de “conhecimento” baseada em Astúcia permitida no seu cenário e adicione +2 ao total quando elas forem usadas.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80cf-887d-dbf96c21ee8a" class=""><em>Esta Vantagem pode ser escolhida diversas vezes se aplicada a perícias diferentes.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8023-8a46-c62c283f52fd" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>INVESTIGADOR</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Astúcia d8+, Pesquisar d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-804c-8ef6-c08ec54ce4a0" class="">Tais profissionais passam bastante tempo pesquisando lendas antigas, angariando informações nas ruas ou deduzindo mistérios diabólicos. Podem trabalhar como detetives particulares, pesquisar magia em um mundo de fantasia, ou estar lecionando em universidades quando seus espíritos inquisitivos os levam a esbarrar em “Coisas Que o Homem Não Deveria Saber”.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8047-a7c8-c99c4ad348ce" class="">Adicione +2 em rolagens de Pesquisar e Perceber feitas para buscar papéis importantes em uma mesa, olhar pilhas de correspondência inútil atrás de algo digno de nota, ou notar itens escondidos em meio a montes de lixo ou detritos.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80d1-b668-ef1143235dba" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>LADRÃO</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Agilidade d8+, Furtividade d6+, Ladinagem d6+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b2-a532-df86ee418536" class="">Tais personagens são especialistas em enganação, traição e acrobacias e podem ser imprescindíveis onde armadilhas precisam ser detectadas, muros escalados e trancas arrombadas.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8081-8f0d-e7afdcd16d3c" class="">Sabem como usar saliências em muros e beirais em janelas para escalar os prédios mais altos, correndo pelas ruas e vielas como gatos. Adicionam +1 em rolagens de Atletismo feitas para escalar em áreas urbanas.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a7-b8b3-f1556c1bed25" class="">Também podem usar as áreas escuras entre a iluminação das cidades para ocultar seus movimentos e adicionam +1 para rolagens de Furtividade em ambientes urbanos.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8099-afdd-e5640dfce7f4" class="">Por fim, são obviamente adeptos da Ladinagem em si, adicionando +1 a essas rolagens em todas as circunstâncias.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8015-9e1b-dacebc7f16f3" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>MATEIRO</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, Espírito d6+, Sobrevivência d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b7-b0df-d1592b1473be" class="">Mateiros são rangers, batedores e caçadores que se sentem mais em casa na natureza do que em áreas urbanas. Eles são rastreadores e batedores habilidosos e sabem como viver da terra por meses.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-805e-97f6-e4ef3c3dcc6b" class="">Mateiros somam +2 nas rolagens de Sobrevivência e Furtividade feitas na natureza (não em cidades, ruínas ou no subterrâneo).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ef-9eea-fb2aae53362c" class=""><strong>MCGYVER</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80dc-8301-e86d9c345bcf" class=""><em>Requisitos:</em> Novato, Astúcia d6+, Perceber d8+, Consertar d6+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8097-a038-c24e58487f79" class="">McGyvers podem improvisar um dispositivo a partir de recursos comuns quando surgir a necessidade. Com alguns itens simples podem fazer uma rolagem de Consertar para criar armas improvisadas, explosivos ou ferramentas que duram até que sejam usadas ou até o fim do encontro (critério do Mestre). Isso leva um turno inteiro e eles não podem se mover ou realizar quaisquer outras ações enquanto estão construindo o dispositivo.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80e9-bf32-edb5be9639f5" class="">Uma falha indica que o dispositivo não fica pronto. Uma Falha Crítica significa que eles não têm os materiais certos e não podem criar o dispositivo neste encontro.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f1-8d54-f16ca12c45ed" class="">Sucesso cria um explosivo menor (Dano 2d4 explosivo em um Modelo Pequeno de Explosão), uma arma de projétil de tiro único tipo uma “zip gun” (Distância 5/10/20, Dano 2d6), uma jangada, fonte elétrica, etc.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80fc-b107-c4fecd633814" class="">Uma ampliação cria um explosivo maior (Dano 2d6 em um Modelo Médio de Explosão ou 2d4 em um Grande), uma arma de combate à distância melhor (cinco tiros, 2d8 de dano, Distância 10/20/40), uma jangada mais estável, uma bateria mais potente, etc.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8074-9c2e-ddba4ccfaebf" class="">A qualidade ou poder da criação fica completamente a critério do Mestre, a criatividade deve ser recompensada, particularmente nas situações mais difíceis e dramáticas.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8005-a778-fcaba8652121"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8057-bff3-f65ba21bcd27" class=""><strong>PAU PRA TODA OBRA</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80de-ad6e-c02f7f66d5ab" class=""><em>Requisitos:</em> Novato, Astúcia d10+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-802b-9a1f-f29d0142dc5e" class="">Devido a sua escolaridade avançada, aprendizagem através dos livros, programas de computador para aprimoramento de perícia ou apenas uma percepção intuitiva incrível, esta figura tem um talento para aprender perícias na hora. Poucas são as coisas que não consegue descobrir dado um pouco de tempo e uma pitada de sorte.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8021-92ea-e14c811e6496" class="">A personagem faz uma rolagem de Astúcia como uma ação depois de observar ou estudar algum assunto. Ela ganha um d4 na perícia relevante com um sucesso ou um d6 com uma ampliação. Se falhar ou quiser tentar uma ampliação, pode tentar novamente depois de uma hora de estudo, tentativa e erro ou imersão. Isso dura até que a personagem tente aprender um assunto diferente, seja bem-sucedida ou não.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8082-a062-e7270325ae07"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8058-8a67-e3a52729625c" class=""><strong>SENHOR CONSERTA TUDO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8012-893b-df04947aba9f" class=""><em>Requisitos:</em> Novato, Consertar d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-805a-b44e-fbdafe63f466" class="">Esta habilidade soma +2 em rolagens de Consertar. Com uma ampliação ela diminui à metade o tempo normalmente requerido para se consertar algo. Isso significa que se um Conserto em particular diz que uma ampliação diminui o tempo à metade, um Senhor Conserta Tudo pode finalizá-lo em um quarto do tempo com uma ampliação.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80c4-8a98-cfe9c5a0228f"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ad-887d-c01289486098" class=""><strong>SOLDADO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80e9-9d62-cd8837d30b14" class=""><em>Requisitos:</em> Novato, Força d6+, Vigor d6+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80db-a0c0-e4094c351354" class="">Soldados profissionais se acostumam a carregar muito peso e a suportar condições difíceis. Depois de alguns dias se acostumando com seu equipamento (critério do Mestre), podem tratar sua Força como um tipo de dado maior quando determinam Sobrecarga (pág. 77) e Força Mínima para usar armaduras, armas e equipamento sem uma penalidade (pág. 76) — isso se acumula com a Vantagem Musculoso.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80fa-9d67-f21a3d21f3e0" class="">Também ganham uma rerrolagem gratuita em rolagens de Vigor feitas para se evitar perigos ambientais (veja Perigos, pág. 142).</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8023-badf-e009d2c6b701"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ef-bb01-d849b681d5b4" class=""><em>(Formatação: Títulos em negrito, requisitos em itálico, conteúdo original preservado com divisão clara entre cada entrada.)</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80bf-90f8-cb6502a0b4e8" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8035-be69-f0cdd64d4905"/></div><div style="display:contents" dir="auto"><h1 id="1b920c7d-c14d-8076-b288-e284d19b8aa9" class="">Vantagens Sociais</h1></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-805d-9c5c-fc186d072edc" class="">Levar as pessoas a fazerem o que você deseja é uma habilidade crítica em praticamente qualquer cenário.</p></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80d3-8586-e060012e7410" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>POÇO DE VIRTUDE</strong></mark><mark class="highlight-red"><br/></mark>REQUISITOS: Novato, normalmente uma pessoa relativamente virtuosa no cenário</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8089-a360-eef047d932cd" class=""><br/><em>Sua personagem raramente se entrega a vícios e acredita no poder do bem e do amor verdadeiro. Apesar dos outros zombarem dela por ser &quot;boa demais&quot;, secretamente admiram sua paz interior e força de caráter.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-802f-9829-e1bea52f28a0" class=""><em>Uma vez durante um combate (a critério do Mestre), pode gastar um Bene para ganhar cinco Marcadores de Inspiração. Isso é uma ação limitada. Pelo resto do encontro, a heroína ou herói pode dar esses marcadores a qualquer um dentro da Distância de sua Astúcia — mas não a si mesma. Isso pode ser feito a qualquer momento desde que esteja consciente, mas o alvo deve usar o marcador imediatamente — não pode ser guardado.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8021-a11f-f3cd3fae3ff7" class=""><em>Cada Marcador de Inspiração permite rerrolar uma rolagem de Característica ou dano. A rolagem só pode se beneficiar de um único Marcador de Inspiração, mesmo que existam várias pessoas com esta Vantagem. Outras rerrolagens requerem o gasto de um Bene ou habilidade especial.</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-809c-9f27-f144a6a5f380" class=""><em>Marcadores de Inspiração não são Benes, não ativam Vantagens que usem Benes (Como Impulso) e não podem ser usados para outras funções como sacar uma nova Carta de Ação ou Absorver Ferimentos.</em></p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-800d-8ea9-f8cfae01e02e" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>AMEAÇADOR</strong></mark><strong><br/></strong><em>Requisitos:</em> Novato, qualquer um dentre Sanguinário, Desagradável, Sem Escrúpulos ou Feio.</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a6-9913-d9568b31b4d6" class="">A brutalidade nem sempre é uma desvantagem se você souber como usá-la a seu favor.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-804d-bd28-eddd82eb3e26" class="">Ameaçador permite que personagens deem um bom uso para sua má aparência ou atitude ruim, permitindo adicionar +2 em suas rolagens de Intimidar.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8019-b3cc-fc6ab2e4e383" class="toggle"><li><details open=""><summary><mark class="highlight-teal"><strong>CATIVAR O AMBIENTE<br/></strong></mark><em>Requisitos:</em> Novato, Espírito d8+</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801f-9d8a-f85045b140eb" class="">As palavras de alguém tão cativante não inspiram apenas àqueles a quem foram dirigidas — geralmente elas também inspiram quem mais as ouvir.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-808d-ac35-fa52e6eb1058" class="">Uma vez por turno, como ação limitada, você pode usar Cativar o Ambiente para rolar um dado adicional de perícia quando dá Suporte com Persuadir ou Performance. O dado adicional proporciona Suporte a qualquer outro aliado normalmente e pode ser usado para qualquer Característica escolhida. Não precisa ser a mesma Característica para ambos os aliados.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-804f-80bd-e788dd998266"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8097-9fcf-ca6f1d0b8c19" class=""><strong>CONEXÕES</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8037-bf16-e795b1446552" class=""><em>Requisitos:</em> Novato</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8061-a7cc-d61d8f1d3450" class="">Existem conexões entre personagens e pessoas ou organizações que podem oferecer ajuda quando as coisas vão mal.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8074-8b5c-ebd829e6da48" class="">Pode ser a máfia, os federais, um sindicato ou até mesmo outras pessoas aventureiras.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80c0-82d9-e22b911f7cb7" class="">Conexões pode ser escolhida mais de uma vez, selecionando uma nova facção ou contato em cada uma.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b3-90cb-dce3fda3c206" class="">Uma vez por sessão, e assumindo que seja possível estabelecer contato, é possível pedir um favor às conexões.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80df-a752-c11e48530c23" class="">O favor depende da natureza do contato (critério do Mestre), mas pode incluir um empréstimo, equipamento, algumas pessoas para ajudar em uma batalha, transporte, informação ou mesmo alguém com habilidades importantes que o grupo não possui, como hackear ou grande conhecimento acadêmico em alguma área.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80f3-8e53-fd1b7c28d232"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a4-be82-d06ec3c924d5" class=""><strong>CONFIÁVEL</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8053-9c4b-e1e8d268124d" class=""><em>Requisitos:</em> Novato, Espírito d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8025-86bd-d1f16ee07e64" class="">As pessoas sabem que podem contar com alguém Confiável quando precisam de ajuda.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8049-ab33-cbb1bdaf0088" class="">Concede uma rerrolagem gratuita em qualquer rolagem de Suporte.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-806c-a1bf-f3bf0a9218ec"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8094-b843-ed77a9eb8a2e" class=""><strong>ELEVAR O MORAL</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8044-ae5f-f73305629be6" class=""><em>Requisitos:</em> Novato, Espírito d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-804e-a89c-c51f7d26507b" class="">Menosprezar ou humilhar rivais também pode elevar o espírito dos seus aliados.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801f-ada7-e41029d83162" class="">Quando alguém com esta Vantagem faz um Desafio bem-sucedido contra qualquer oponente, também pode remover o Estado Distraído ou Vulnerável (pág. 120) de um de seus aliados.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80f1-84ba-d08c3465f3ed"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-804f-b9d9-ccbe36eaf0c6" class=""><strong>ELO COMUM</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801b-8527-fd2112ec936b" class=""><em>Requisitos:</em> Carta Selvagem, Novato, Espírito d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801e-bee6-dd2347afe59c" class="">Altruístas e líderes que possuem determinação sabem que a sua maior força geralmente vem de seu grupo e se dispõem a dar um pouco da sua própria fortuna, destino ou sorte para lhes dar suporte.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8005-9e7e-dd45b3f6ea4a" class="">Alguém com esta Vantagem pode dar seus Benes livremente para qualquer outra pessoa com quem possa se comunicar. É necessário explicar a forma que isso toma, de um grito rápido de encorajamento a um tapinha das costas.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80bc-95d1-cad2489f9dea"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8037-a6af-cd3103353283" class=""><strong>HUMILHAR</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8042-a579-f1ad63cf0538" class=""><em>Requisitos:</em> Novato, Provocar d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8038-96c6-fdbea80ae3f4" class="">Quem tem um raciocínio cruel pode destruir o ego de rivais com um simples comentário ou gesto.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80d5-9fa2-db112a08151c" class="">Esta vantagem concede uma rerrolagem gratuita em Desafios de Provocar.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80be-bf45-fb69c9a60390"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ca-b7c9-fced4c3d1462" class=""><strong>MANHA</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8013-87ff-c68533725aff" class=""><em>Requisitos:</em> Novato, Astúcia d6+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8081-b159-f62f5e8d40df" class="">Personagens com Manha sabem como encontrar um lugar no mercado negro, receptar bens roubados, evitar agentes da lei do local (ou elementos criminosos!), se esconder quando a situação está tensa, obter armas ilegais, descobrir que “chefe” está contratando capangas ou atividades obscuras semelhantes.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8010-afcf-cc068e0e8be9" class="">Personagens que têm Manha adicionam +2 em rolagens de Intimidar e Persuadir feitas para uma Rede de Contatos (veja pág. 160) com elementos suspeitos ou criminosos.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8057-9001-e5c8649a30ec" class="">Também adicionam +2 em rolagens de Conhecimento Geral tratando das atividades infames listadas acima.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-802d-919d-f26db9bdc183"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-805f-84a0-d931801f9e9f" class=""><strong>OBSTINADO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f4-8f88-c09992d46150" class=""><em>Requisitos:</em> Novato, Espírito d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8005-bbf4-f53adcc9a8bb" class="">Auto-confiança é uma armadura poderosa contra quem tenta atacar a vontade deste indivíduo.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b4-adff-e9c1851f377e" class="">Adicione +2 em seu total quando resiste a Desafios com Astúcia ou Espírito.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-806e-9239-e7b395db8661"/></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80d4-97a2-edd81852112e"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8075-bf95-f0672d994c0d" class=""><strong>PROVOCADOR</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-806b-a8d4-e2a59d1e12e0" class=""><em>Requisitos:</em> Novato, Provocar d6+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8025-b65c-c56bd4da33c4" class="">Personagens que tenham boa astúcia podem manipular oponentes, atraindo o foco para si mesmos em um confronto para proteger quem está a seu lado.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8042-b24e-fc341269df6d" class="">Uma vez por turno, quando usa Provocar para um Desafio e consegue uma ampliação (veja Desafio, pág. 119), pode usar Provocador em um alvo.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80c5-a9de-c20ba693ab9a" class="">Além de todos os efeitos normais do sucesso e da ampliação, ocorre uma penalidade de -2 para afetar qualquer outro alvo além de quem fez a provocação. Isso se acumula com Distraído mas não com outras ocorrências de Provocador.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801d-99c5-c4c1a9189700" class="">Provocador dura até que um Curinga seja sacado, outra pessoa Provoque o alvo ou que o encontro acabe.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8076-a023-cc8e48883468" class="">Provocador pode afetar vários alvos e pode ser combinado com Agitador (veja pág. 56).</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8064-b17f-f7f30a247ef9"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8027-bf50-fd1ceb916c15" class=""><strong>RÉPLICA</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ad-9d7b-f418ba6a312c" class=""><em>Requisitos:</em> Novato, Provocar d6+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a8-97c3-dc2535dd5f24" class="">Duelistas verbais que podem rebater os &quot;ataques&quot; do combate social de volta aos tolos desprevenidos que os lançaram.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ae-b557-ff3a20536874" class="">Se uma personagem com Réplica conseguir uma ampliação quando resiste a um Desafio de Intimidar e Provocar, o adversário fica Distraído.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80ff-8676-d4fe945d8f1a"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-801f-84a5-f04808640ff0" class=""><em>(Formatação: Títulos em negrito, requisitos em itálico, conteúdo original preservado com divisões claras entre cada entrada.)</em></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-800b-a59c-ddff30902e3b" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="1b920c7d-c14d-80fa-a30a-d2f9d5ef0994" class="">Vantagens Estranhas</h1></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ba-87cc-d3bfb6404a13" class="">Vantagens Estranhas são levemente sobrenaturais em sua origem e assim geralmente só são apropriadas em jogos com tais elementos. Verifique com o Mestre antes de adotá-las.</p></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8056-bd34-cc8fcdc4c2d1" class="toggle"><li><details open=""><summary><mark class="highlight-red"><strong>VISÃO</strong></mark><br/>REQUISITOS: Novato</summary><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8050-8ce7-c1046faff88f" class=""><br/>Sonhos sombrios de imagens rápidas de destruição e perdição preenchem a mente desta pessoa. Apesar das visões normalmente serem perturbantes, elas também podem ser úteis.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-806d-b168-e1649376531c" class=""><br/>Uma vez por sessão de jogo, a personagem recebe uma visão. Pode ser um flash repentino que pode ocorrer a qualquer momento, um pesadelo que só acontece quando dorme, ou pode ser um processo ativo como ler as folhas de chá ou cartas de tarô.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a1-a5ec-d78f4cc0e080" class=""><br/>Quando isso acontece, use o sistema de Sinais e Presságios descritos na pág. 61. (HORROR)</p></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ff-9dd1-ccc99eec3406" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80be-ad2b-d0b0a64447f0" class=""><strong>CAMPEÃO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-804f-86b6-e13dd26e65d8" class=""><em>Requisitos:</em> Novato, Espírito d8+, Lutar d6+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80a8-9afd-f564d53b1bfd" class="">Campeões são pessoas sagradas (ou profanas) escolhidas para lutarem por uma divindade ou religião em particular. A maioria é de almas devotas, prontas e dispostas a entregar suas vidas por uma causa maior, mas também é possível nascer na função e seguir seu caminho com alguma relutância.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f7-b744-c2d220e8b058" class="">Campeões combatem as forças da escuridão (ou do bem) adicionando +2 ao dano quando atacam criaturas sobrenaturais malignas (ou benignas). O bônus se aplica a ataques de efeito em área, ataques à distância, poderes, etc.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8091-9aea-ec057e0859e6" class="">O Mestre pode decidir a quais inimigos este bônus se aplica, mas geralmente é contra qualquer criatura má (ou boa!) nascida através de magia ou com quaisquer habilidades sobrenaturais.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-808a-851c-f0f0f39dd619" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80d9-8021-f4952e7abcea" class=""><strong>CORAGEM LÍQUIDA</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8086-8e39-d8ff3a6934e3" class=""><em>Requisitos:</em> Novato, Vigor d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8066-b367-d0e732391c15" class="">Este indivíduo sociável processa o álcool de modo bem diferente da maioria das pessoas.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8082-8c67-db240b012dc7" class="">Na rodada depois de consumir uma bebida forte (cerca de 250ml de um destilado ou equivalente), seu Vigor aumenta em um tipo de dado (aumentando também a Resistência). Também é possível ignorar um nível de penalidades por Ferimento (cumulativo com outras habilidades de mesmo efeito).</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8084-a1ab-ddea56af7bf4" class="">Contudo, Astúcia, Agilidade e todas as perícias associadas sofrem uma penalidade de -1 enquanto durar.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80af-815a-fe12c2364430" class="">Depois de iniciado, o efeito dura por uma hora. Após isso, o bêbado sofre um nível de Fadiga pelas próximas quatro horas.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80f0-8749-c6fc0f1f7137"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8072-8548-dc3df4f0229e" class=""><strong>CURANDEIRO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80bc-94a0-dfdc8f70f3b6" class=""><em>Requisitos:</em> Novato, Espírito d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8071-b54b-df6d8ec3afc7" class="">Quem conta com esta Vantagem adiciona +2 em todas as rolagens de Curar, seja natural ou mágica.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-80db-9677-c7e222da3312"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8060-a82c-c3d2cb6f40cb" class=""><strong>ELO ANIMAL</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-800c-8c75-e5d6c5c7b76f" class=""><em>Requisitos:</em> Novato</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80b4-927c-c59d4009c8c1" class="">Alguns indivíduos podem exercer incrível domínio sobre suas companhias animais.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8030-8f6e-c7d85e422f85" class="">É permitido que gastem seus próprios Benes para quaisquer animais sob o seu controle, incluindo montarias, animais de estimação, familiares e assim por diante.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8078-b56c-ea35790b4ca5"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-807f-8536-f93d9d24a650" class=""><strong>NOÇÃO DO PERIGO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-807b-9974-ce98257dc3e4" class=""><em>Requisitos:</em> Novato</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8090-b87a-cb2a73810022" class="">Esta pessoa pode sentir quando alguma coisa ruim está prestes de acontecer.</p></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8006-96b1-e93354096e99" class="bulleted-list"><li style="list-style-type:disc"><strong>Surpresa:</strong> Adiciona +2 em sua rolagem de Perceber para agir na primeira rodada. Com uma ampliação, começa o encontro em situação de Aguardar.</li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8038-91e0-fe54d2ba3157" class="bulleted-list"><li style="list-style-type:disc"><strong>Outras Situações:</strong> Concede uma rolagem de Perceber com -2 (ou +2 se uma rolagem de perceber for permitida) para detectar o perigo (ataques de sniper, armadilhas, etc.). Se for um ataque e a personagem faz sua rolagem de Perceber, o adversário não consegue uma Finalização contra ela.</li></ul></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8054-aae6-e83d6a484a59"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80db-80bf-f3e105b201e8" class=""><strong>SENHOR DAS FERAS</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80f4-8e22-deae9800ff1d" class=""><em>Requisitos:</em> Novato, Espírito d8+</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80bc-b4b3-d33cb574b3ff" class="">Animais se afeiçoam a personagens com esta Vantagem rápida e facilmente. Não irão atacar a menos que sofram um ataque primeiro ou estejam em fúria por alguma razão.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8024-a4be-e86974fb2a12" class="">O “magnetismo animal” do Senhor das Feras é tão grande que também atrai um animal leal de alguma espécie. Geralmente é um animal de Tamanho 0 ou menor, sujeito à aprovação do Mestre.</p></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80ac-aab0-da8744ac2863" class="bulleted-list"><li style="list-style-type:disc">O animal é um Extra e não tem Progresso em Estágio ou habilidades.</li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80c5-ba4f-d43cb44eff23" class="bulleted-list"><li style="list-style-type:disc">Se um animal for dispensado ou morto, pode-se ganhar um substituto em 1d4 dias.</li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-80d2-a558-f370ada8f8ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Companheiros Mais Poderosos:</strong> Escolha um dos efeitos abaixo cada vez que a Vantagem for escolhida:<div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8058-ab0a-ea28982e9dcd" class="bulleted-list"><li style="list-style-type:circle">Ganha um animal adicional.</li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-805f-a13f-ef34fd2d5ce3" class="bulleted-list"><li style="list-style-type:circle">Aumente uma das Características de um animal em um tipo de dado (apenas uma Característica por animal).</li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8052-b3ba-ef2f3722294c" class="bulleted-list"><li style="list-style-type:circle">Aumente o Tamanho máximo que o seu animal pode ter em +1, até um máximo de 3.</li></ul></div><div style="display:contents" dir="auto"><ul id="1b920c7d-c14d-8059-82cf-e993998d704d" class="bulleted-list"><li style="list-style-type:circle">Transforma um animal em Carta Selvagem (a personagem deve ser do Estágio Heroico).</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-8083-872f-f8d4dac0ea22"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80c8-b626-cbbf02342c7c" class=""><strong>SUCATEIRO</strong></p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-806e-878c-df4924cc3ba0" class=""><em>Requisitos:</em> Novato, Sorte</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80ba-b202-c9bd951df5b8" class="">Uma vez por encontro é permitido “lembrar de repente”, ou arrumar um equipamento, punhado de munição ou algum outro dispositivo útil que seja extremamente necessário.</p></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-8025-8aba-f66774ebf366" class="">O Mestre decide o que constitui um encontro e detêm a palavra final sobre o que pode ser encontrado.</p></div><div style="display:contents" dir="auto"><hr id="1b920c7d-c14d-800c-a880-ff66ff9f795c"/></div><div style="display:contents" dir="auto"><p id="1b920c7d-c14d-80e0-97a0-dbc546c4de86" class=""><em>(Formatação: Títulos em negrito, requisitos em itálico, conteúdo original preservado com divisões claras e listas para melhor organização visual.)</em></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

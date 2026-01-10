@@ -1,0 +1,721 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Complicações</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1b920c7d-c14d-80d3-a18d-c7b5c0d47d09" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_blue.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Complica%C3%A7%C3%B5es/0312Minun.png"/></div><h1 class="page-title" dir="auto">Complicações</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1bd20c7d-c14d-80b8-a622-ff53d5613e88"><div style="font-size:1.5em"><span class="icon">📖</span></div><div style="width:100%"><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-803c-bf5d-c169d6a26c69" class="">É melhor ver nos livros, mas juntei aqui pra ficar tudo em um lugar só.</p></div></div></figure></div><div style="display:contents" dir="auto"><blockquote id="1bd20c7d-c14d-801e-a22b-eac0cf452dbb" class=""><em>Complicações são falhas e/ou deficiências físicas que tornam a vida de cada personagem um pouco mais dura.<br/><br/>Algumas complicações têm efeito direto em jogo. Outras são Complicações de interpretação mais subjetivas que lhe ajudam a compreender e a interpretar melhor sua personagem. Elas ocasionalmente devem fazer com que ações não necessariamente inteligentes ou apropriadas aos interesses do grupo ou o objetivo geral sejam tomadas.<br/><br/>É disso que se tratam os RPGs! E quando as Complicações de personagens causarem problemas significativos, o Mestre deve conceder Benes.</em></blockquote></div><div style="display:contents" dir="auto"><p id="1be20c7d-c14d-8020-8360-cf92effaba56" class="">
+</p></div><div style="display:contents" dir="auto"><div id="1be20c7d-c14d-806b-8596-ebc0335e4973" class="column-list"><div style="display:contents" dir="auto"><div id="1be20c7d-c14d-80c8-8e81-e9c2c6fb63dc" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="1be20c7d-c14d-8054-b925-d52ab2222282" class="image"><a href="Complica%C3%A7%C3%B5es/SAVAGEWORLDS_-_RPPEG-EA001e_-_EDICAOREVISADA_(v1.2_24.07.29)_rev_rev_rev_-_0001.png"><img style="width:709.984375px" src="Complica%C3%A7%C3%B5es/SAVAGEWORLDS_-_RPPEG-EA001e_-_EDICAOREVISADA_(v1.2_24.07.29)_rev_rev_rev_-_0001.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="1be20c7d-c14d-8053-9966-ca800b90e67a" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="1be20c7d-c14d-80d6-88b6-cb7e29ab9373" class="image"><a href="Complica%C3%A7%C3%B5es/SAVAGEWORLDS_-_RPPEG-EA001e_-_EDICAOREVISADA_(v1.2_24.07.29)_rev_rev_rev_-_0002.png"><img style="width:1772px" src="Complica%C3%A7%C3%B5es/SAVAGEWORLDS_-_RPPEG-EA001e_-_EDICAOREVISADA_(v1.2_24.07.29)_rev_rev_rev_-_0002.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="1be20c7d-c14d-80ea-aa38-d48326f1b582" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1be20c7d-c14d-8016-8838-f5da87f08813" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="1be20c7d-c14d-807c-b365-ed93d15bd355" class="">Resumo:</h1></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8021-b3ef-f663d2529174" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>ALMOFADINHA (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80bd-a759-fc696a899e59" class="">São personagens que aparentam fragilidade e não parecem uma ameaça. Podem soar meio molengas, ter feições gentis ou uma voz suave. Seja qual for a razão, será difícil parecer hostil. Subtraia 2 quando fizer rolagens de Intimidar.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8010-b573-d0970763ca6e" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>AMOROSO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-803b-b08d-f1dbc49b49aa" class="">Devido a luxúria ou a uma forma de verdadeira admiração, este indivíduo se apaixona facilmente. Personagens Amorosas sofrem uma penalidade de -2 para resistir a Desafios de qualquer personagem com as Vantagens Atraente ou Muito Atraente.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80d3-82bb-e21d5f03312c" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>ANALFABETO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80fd-b554-caf6fea9cc75" class="">Esta figura não sabe ler. Provavelmente pode assinar seu nome e sabe o significado de um sinal de PARE, mas não pode fazer muito mais que isso. Também não sabe muito sobre Matemática; deve ser capaz de efetuar 2+2=4, mas multiplicações e similares estão além da sua capacidade. Não será possível ler ou escrever nenhum idioma, mesmo que tenha fluência falada em vários.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-804d-8803-cf6c8e4fc478" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>ANÊMICO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8039-ba40-f39958c7b453" class="">Anemia torna personagens particularmente suscetíveis a infecções, doenças, efeitos ambientais e fadiga. Deve subtrair 2 de todos os testes de Vigor feitos para resistir a Fadiga (veja Perigos, começando na pág. 142).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80b5-9350-d34607c536bb" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>APETITE INCOMUM (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8085-bdfb-e05c506e3b41" class="">Seu investigador ou investigadora come algo que a maioria acha perturbador, como papel, comida achada no lixo, insetos ou até mesmo comida podre. Isso reduz suas rolagens de Persuadir em -2 quando lida com aqueles que sabem de seus estranhos hábitos alimentares.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80c9-8538-c087286f18a5" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>ARROGANTE (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8057-9e76-fc41855ddf05" class="">Personagens arrogantes não se acham melhores, sabem que são. Seja no que for – esgrima, kung fu, pintura – aproveitam cada oportunidade para ostentar que quase ninguém se compara às suas habilidades. Só vencer não é o bastante, é preciso dominar completamente quem se opuser e provar sua superioridade. É o tipo de pessoa que desarma oponentes em um duelo só para poder pegar a sua espada e devolvê-la com um sorriso desdenhoso. Personagens arrogantes sempre procuram pela maior ameaça em batalha, atacando rivais menores apenas se ficarem em seu caminho.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a7-9885-d5947da9503f" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-804a-b456-c9f03cb44caf" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>ASSUSTADO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80dd-a971-cbc222508b50" class="">Qualquer coisinha deixa esta personagem nervosa e assustada. Sempre que houver um barulho, choque ou surpresa repentinos (a critério do mestre), personagens Assustados devem fazer um teste de Medo.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80ee-a8cf-e5488bb1584b" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>ATRAPALHADO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8069-a959-f655e92bf0eb" class="">São personagens sem coordenação motora, capazes de tropeçar nas próprias pernas e sem habilidade para esportes. Subtraem 2 em rolagens de Atletismo e Furtividade.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8023-921e-dc05fbf3af47" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80e7-8ac2-fba680f327f2" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>BOCA GRANDE (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80e2-8e11-fce9e6132f8f" class="">Como diz o ditado, quem fala demás dá bom dia a cavalo. Personagens Boca Grande poderiam cumprimentar uma cavalaria inteira. Acham difícil guardar segredos e acabam revelando planos secretos. Isso geralmente ocorre nos piores momentos possíveis.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80c5-b2ba-e93cd9d6aea6" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>CAUTELOSO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8036-8e8d-fb0e11d67c14" class="">Personagens com Cautela personificam a moderação e a precaução, nunca tomam decisões precipitadas e gostam de planejar tudo em mínimos detalhes antes que qualquer ação seja tomada.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-807c-acb5-e80f4d87d503" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>CEGO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8071-b208-dc0f2137124b" class="">Por não ter visão, sofre -6 em todas as tarefas físicas dependentes deste sentido (a critério do Mestre). Por outro lado, personagens sem visão ganham uma Vantagem gratuita a sua escolha para compensar esta Complicação particularmente difícil.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80c6-8bd8-d52f94331d3c" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>CÓDIGO DE HONRA (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80ed-8cb1-e2c04171761a" class="">Honra é muito importante para tais personagens, que mantêm sua palavra, não matam ou abusam de prisioneiros e geralmente tentam operar dentro do comportamento adequado para um cavalheiro ou uma dama segundo as noções particulares de seu mundo.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80b1-acdd-c21211f78d43" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>CONDENADO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-805a-a0db-eb4b1a70976a" class="">A morte está ansiosa por sua personagem. Quem sabe ela tenha trapaceado em algum momento de sua vida ou tenha sido trazida de volta à vida e agora deve uma taxa ao Barqueiro. Qualquer que seja a razão, a personagem subtrai 2 de suas rolagens de Absorção.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80af-b9cb-de24d7a44a64" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>COVARDE (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a3-8fac-d6d9882d4ec2" class="">Nem sempre protagonistas têm sangue frio. Covardes tremem quando veem sangue ou vísceras e ficam apavorados de se ferir. Subtraem 2 de testes de Medo e quando resistem à Intimidação.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8054-95ad-e00ab1cb8e4b" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>CURIOSO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8001-882f-f04e677efd89" class="">A curiosidade matou o gato e também pode matar seu herói ou heroína. Personagens curiosas checam tudo e sempre querem saber o que há por trás de um mistério ou segredo em potencial.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80b3-b6ba-dde605782292" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>DEFICIENTE AUDITIVO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8013-ac5c-dbabc2e49a3c" class="">Personagens que perderam parte ou toda a sua audição têm esta desvantagem. Como uma Complicação Menor, ela subtrai 4 de todas as rolagens de Perceber feitas para ouvir, incluindo acordar devido a ruídos altos. Uma Complicação Maior significa ausência total do sentido de audição, levando à falha automática em todas as rolagens de Perceber dependentes da audição. Aparelhos auditivos reduzem a penalidade para 2, mas precisam de baterias e têm 50% de chance de caírem caso a personagem sofra um nível de Ferimento, queda ou algum outro tipo de trauma.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8013-bb8c-e36039ab3d51" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>DELIRANTE (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8053-bcb2-d8d703643b01" class="">Delirantes acreditam em algo considerado muito estranho pelo resto das pessoas. Delírios Menores são inofensivos ou a personagem normalmente os guarda para si mesma (o governo colocou sedativos em refrigerantes, cães podem falar, todos nós somos apenas personagens de algum jogo bizarro etc.). Com Delírios Maiores, ela frequentemente expressa seu ponto de vista sobre a situação e isso pode eventualmente levá-la ao perigo (o governo é comandado por alienígenas, os hospitais são mortais, eu sou alérgico a armaduras, zumbis são meus amigos).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-805a-940c-cf620c916b7b" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>DESAGRADÁVEL (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a4-8f3d-ee1de9b3ff80" class="">Personagens com esta complicação são desagradáveis, sempre estão de mau humor. Pessoas desagradáveis têm problemas para fazer qualquer tipo de ato caridoso a qualquer pessoa e acreditam que devem receber pagamento por seus esforços, mas não aceitam favores ou premiações graciosamente. Além das questões óbvias de interpretação, subtraem 1 das rolagens de Persuadir.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8082-8e8b-cb83e9a18df6" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>DESASTRADO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-805a-8d32-c2b65523b7a1" class="">Devido a criação, falta de exposição ou puramente má sorte, alguns indivíduos são “desastrados” quando se trata de lidar com dispositivos mecânicos ou tecnológicos. Desastrado inflige uma penalidade de -2 quando se usa dispositivos elétricos ou mecânicos. Se a rolagem for uma Falha Crítica ao usar um dispositivo (e o mesmo não tenha uma consequência já definida para isso), ele quebra. Se o Mestre considerar apropriado, pode ser consertado com uma rolagem de Consertar e 1d6 horas.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80ec-8819-ed65994ae2e7" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>DESCONFIADO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a4-9930-fa5cbeb39066" class="">Essa personagem desconfia de todo mundo. Como uma Complicação Menor, sua paranoia cria frequentemente problemas de confiança, podendo exigir o pagamento integral antes de realizar uma tarefa, exigir que todos os acordos estejam por escrito ou mesmo acreditar estar sofrendo perseguição por parte das pessoas próximas. Como uma Complicação Maior, rolagens de Suporte para ajudar o indivíduo Desconfiado são feitas com -2.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8063-9b85-d3cbf7affa6e" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>DESEJO DE MORRER (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80d6-a4b1-e6c681f15062" class="">Ter um desejo de morrer não significa ser suicida em potencial, mas pode levar personagens a acreditar que suas vidas valem menos do que um objetivo nobre, mas claramente mortífero. Quem tem Desejo de Morrer não jogará a vida fora por qualquer razão, mas quando houver uma chance de completar o seu objetivo, fará qualquer coisa – e aceitará qualquer risco – para alcançá-lo.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80f0-b7d3-c742ad74dc16" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80b0-9f03-e2d57258294e" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>EXCESSO DE CONFIANÇA (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80ff-ac05-f1c42eeb3bc2" class="">Acreditam ser capazes de derrotar qualquer oponente e de fazer quase tudo. Personagens confiantes nunca querem fugir de um desafio. Não são suicidas, mas vão além do que dita o bom senso.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8072-bce9-cd2c07b6de78" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>FEIO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-807b-9b14-fbccdcac9a9c" class="">Pessoas atraentes conseguem todo tipo de vantagem. Essa personagem desafortunada não é uma dessas pessoas. Subtraia 1 de suas rolagens de Persuadir ou 2 se escolher uma Complicação Maior.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8093-a0f8-cf272be6f4e9" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-806a-a287-e3806125dac1" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>FOBIA (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8026-8d2c-ca3fa3964d05" class="">Fobias são medos esmagadores e irracionais que afetam a psique da personagem. Sempre que qualquer personagem estiver na presença de sua fobia (a critério do Mestre, mas geralmente quando avistá-la), subtraia 1 de todos os testes de Característica no caso de uma Complicação Menor e 2 se for uma Maior. Fobias não devem ser muito óbvias – é bom senso temer criaturas inegavelmente perigosas, como, por exemplo, vampiros, portanto isso não é uma fobia. Ao invés disso, a fobia geralmente se concentra em algum elemento aleatório que a mente associa ao evento. Lembre: fobias são medos irracionais.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80fb-b00e-f4c8b3758176" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>FORASTEIRO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80fd-b29f-c6aae3a16a50" class="">Em uma sociedade formada por apenas alguns tipos de pessoas, as personagens com essa Complicação não se encaixam. Um membro de um povo nativo americano em uma cidade do Velho Oeste, uma criatura alienígena em um jogo de ficção científica de fuzileiros humanos ou uma criatura meio-orc em um grupo composto por grupos élficos, anãs e humanas são todos exemplos de Forasteiros. Habitantes locais são suscetíveis a aumentar os preços para estas figuras deslocadas, ignorar seus pedidos de socorro e geralmente tratam-nas como se fossem de uma classe mais baixa. Tais personagens subtraem 2 de rolagens de Persuadir feitas para influenciar quem não é do seu próprio povo. A versão Maior também significa ter poucos ou nenhum direito legal na região da campanha. Personagens com esta complicação podem ser de uma espécie diferente entre xenófobos, estar em uma civilização cruel e pouco esclarecida em relação a estranhos ou pode ser uma inteligência artificial cuja consciência não é reconhecida por lei.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8009-8239-ca465f2bf1e4" class="">
+</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-806f-a520-c5c50bf76a97" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>GANANCIOSO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8076-af40-d15c5711229e" class="">Personagens com essa complicação agem com avareza, medindo valor em bens comerciais ou riqueza. Como uma Complicação Menor, argumentam amargamente querendo mais do que sua parte em qualquer despojo adquirido durante o jogo. Se for uma Complicação Maior, lutam por qualquer coisa que considerem injusta e podem até mesmo matar ao se sentirem alvo de menosprezo ou cobiçarem algo que não possam ter.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8050-aa89-d57d0c527756" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>GUIADO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8056-894a-c2ef97aebfd6" class="">Voto e Guiado são complicações diferentes. Personagens com Voto têm um compromisso com outrem, enquanto Guiados buscam algo para si. Pode ser proteger o reino, receber condecoração como oficial, vencer todas as lutas no Coliseu Romano ou ganhar reconhecimento entre pilotos na frota galática. A versão Menor define a personagem e dirige as suas decisões, mas acontece raramente ou é relativamente inofensivo. Como uma Complicação Maior, a personagem tem um desejo que lhe é impreterível e aparece frequentemente ou causa perigo para a personagem ou às pessoas ao seu redor.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-803d-83cd-d3ca05d97a7c" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>HÁBITO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8094-8081-e704593e1a3e" class="">Essa personagem possui um hábito irritante e constante de algum tipo. Um Hábito Menor irrita aqueles a seu redor, mas não é perigoso, como cutucar o nariz, não conseguir parar de mexer no telefone, dizer “cê sabe” no meio de cada frase ou frequentemente mascar chiclete de forma barulhenta. Mesmo pessoas próximas evitarão a personagem se possível. Um Hábito Maior é algum tipo de dependência física ou mental, debilitante ou possivelmente mortal, como usar drogas, alcoolismo ou até mesmo um vício em realidade virtual em um cenário de alta tecnologia. Personagens com Vício que não recebam sua dose precisam fazer um teste de Vigor a cada 24 horas ou recebem um nível de Fadiga (veja pág. 122). A cada 24 horas, uma rolagem de Curar com algum tipo de medicamento apropriado remove um nível de Fadiga por quatro horas. Depois disso, a Fadiga retorna e só pode ser recuperada com a substância viciante.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-801e-a65e-c0efcf90b114" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>HEMOFÍLICO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8035-a5a1-fb12a79f8a0a" class="">Alguns indivíduos sangram mais do que outros. Talvez seja uma condição genética, ou a vítima seja apenas azarada e é atingida em uma veia ou artéria toda vez que cruza com algum psicopata com uma faca. Sempre que sofrer um Ferimento que não leva à Incapacitação, começa a sangrar. Toda rodada após sofrer o Ferimento é necessário fazer uma rolagem de Vigor como ação livre ou sofre um nível de Fadiga que pode levar à morte. O sangramento pode ser interrompido com uma ampliação na rolagem de Vigor ou uma rolagem de Curar bem-sucedida.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80a1-a025-f186d99da45e" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>HEROICO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-809e-b395-f5f6aba83b9c" class="">Esta nobre alma nunca diz não a uma pessoa necessitada. Não necessariamente a personagem fica feliz com isso, mas sempre virá em socorro daqueles que não podem ajudar a si mesmos. É a primeira pessoa a correr para dentro de um prédio em chamas, geralmente aceita caçar monstros por pouco ou nenhum pagamento e normalmente é alvo fácil para uma história triste.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8072-81b0-d02c06818e1a" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>HESITANTE (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8099-8689-c84204530ed6" class="">Personagens hesitantes levam tempo para agir em situações estressantes. Saque duas Cartas de Ação em combate e aja na menor. Se você sacar um Curinga, use-o normalmente e ignore a Complicação na rodada (sendo esta uma Complicação Menor, na verdade ela aumenta suas chances de sacar um Curinga!). Personagens Hesitantes não podem escolher as Vantagens Rápido ou Focado.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80aa-8a75-fa8aa202b50f" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>HISTÉRICO (MENOR/MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-809a-9be1-e9758b105c06" class="">Não importa o quanto este investigador ou investigadora tente impedir, medo e terror provocam um grito histérico. Sempre que falhar no teste de Medo, a personagem automaticamente emite um grito ensurdecedor. Como Complicação Maior, você continua gritando e fica em Estado Distraído até fazer uma rolagem de Astúcia como ação livre limitada. Aliados (que possam escutar) dentro de um Modelo Grande de Explosão centrado na personagem também ficam em Estado Distraído até que o grito se encerre ou se movam para fora do modelo.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80e1-9273-c69cd597a83c" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>IDOSO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-804c-8ec7-cb0802ff3ecf" class="">Sua personagem está envelhecendo, mas não está totalmente pronta para o asilo. Sua Movimentação é reduzida em 1 quadro e subtrai 1 de rolagens de corrida (mínimo 1). Também sofre uma penalidade de -1 em rolagens de Agilidade, Força e Vigor, mas não em suas perícias associadas. Por outro lado, a sabedoria dos seus anos concede 5 pontos de perícia adicionais que podem ser usados em quaisquer perícias associadas à Astúcia.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80c6-8b70-eea4c0218a17" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>IMÃ DE BALAS (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80cb-a97c-f0b9ca5e1d18" class="">Algumas pessoas sempre estão no lugar errado e na hora errada. Esta alma infeliz é atingida por disparos acidentais (usando as regras de Espectadores Inocentes) com 1–2 em armas de tiro único e 1–3 com escopetas e armas automáticas.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-804f-805d-dd84b4886891" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>IMPULSIVO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8048-b8ff-cfc33678605b" class="">Personagens com esta complicação mergulham de cabeça nas situações e raramente pensam antes de agir.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80e1-9514-fd20ab48c175" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>INCRÉDULO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-801c-a632-d586ea28cefa" class="">Algumas pessoas não acreditam no sobrenatural até estarem a meio caminho da garganta de alguma criatura. São pessoas céticas que se esforçam para racionalizar eventos sobrenaturais. Essas personagens se lançam diretamente em perigos que não acreditam e procuram explicações alternativas para qualquer evento sobrenatural. Mesmo que sofra um confronto direto com uma verdade inegável, sua mente eventualmente começa a duvidar do que viu, racionalizando ou atribuindo ao evento um caráter “único” enquanto continua a duvidar do próximo mistério.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80ad-a0d5-d08e697040d7" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>INIMIGO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80b2-9b3b-ff4baa34d3d3" class="">Alguém odeia essa figura e quer sua ruína, prisão ou morte. O valor da Complicação depende do poder de seu oponente e de quantas vezes poderá aparecer. Inimigo Menor pode ser alguém buscando vingança com uma pistola ou uma irmandade traída que é mortal, mas só aparece raramente. Inimigo Maior pode representar autoridades poderosas, um bando de foras da lei ou um nêmesis poderoso e incansável. Se ocorrer vitória sobre seu Inimigo, o Mestre deve trabalhar gradualmente na introdução de novo Inimigo ou a Complicação pode ser paga com um progresso.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80af-b1b4-eb46ce699e93" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>INVEJOSO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8044-979b-e89cd8192cb9" class="">A insegurança leva à inveja das conquistas alheias ou a ser excessivamente possessiva com o que essa alma descontente acredita que lhe pertence. Essa personagem geralmente reclama, choraminga, cobiça as posses ou feitos dos outros, reivindica crédito pelo trabalho alheio, desobedece comandos e causa problemas no geral. Como uma Complicação Menor, sua inveja se foca em um assunto em particular (como a sua perícia “inigualável” em pilotagem ou um interesse amoroso). Como uma Complicação Maior, a personagem sente inveja de todos que considera que lhe ofuscam. Sempre fala mal de rivais, tenta ter maior visibilidade ou conspira ativamente para desacreditar quem ameaça seu ego.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-806e-8c24-ef46f586cc04" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>JOVEM (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8092-9d9b-cae3312f8508" class="">A personagem tem entre 12-15 anos (em idade humana—ajuste para outras ancestralidades). Possui apenas 4 pontos para ajustar seus atributos em vez de 5, e 10 pontos de perícia em vez de 12. Também pode ter restrições legais dependendo do cenário (não pode dirigir, possuir uma arma de fogo e assim por diante). Pelo lado positivo, jovens têm um bocado de sorte. Sacam um Bene extra no início de cada sessão de jogo (isso se acumula com outras Vantagens como Sorte ou Sorte Grande). A maioria dentre personagens Jovens também deve adotar a Complicação Pequeno, mas não é obrigatório. Como uma Complicação Maior, a personagem é Muito Jovem (8 a 11 anos de idade). Tem apenas 3 pontos para atributos e 10 para perícias, além da Complicação Pequeno. Personagens muito Jovens sacam dois Benes extras no começo de cada sessão.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80eb-b44d-f053646baac3" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>LEAL (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80d2-b3ff-cdec4cf8d189" class="">Personagens leais possuem grande coragem e arriscam sua vida sem hesitação pelas suas amizades. Podem até não agir dessa maneira, mas ajudam sem pensar quando as pessoas próximas são ameaçadas.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8090-a1e4-fa5e2314326e" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>LENTO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80c2-86fe-c604f93770c6" class="">Uma deficiência ou ferimento antigo dificulta a mobilidade dessa personagem. Como uma Complicação Menor, reduza sua Movimentação em 1 e seu dado de corrida em um tipo (caso já seja d4, reduza para d4-1). Como uma Complicação Maior, reduza o dado de corrida em um tipo, Movimentação em 2 quadros e subtraia 2 de rolagens de Atletismo e rolagens de resistência a Atletismo (como Desafios ou Agarrar). Personagens Lentos não podem ter a Vantagem Ligeiro.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80b2-849d-c32ee37b8bf3" class=""><strong>Próteses:</strong> Na versão Menor desta Complicação é possível ter uma prótese. Se a prótese se perder, passam a valer os efeitos da versão Maior.</p></div><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80db-b652-dd6ef4508942" class=""><strong>Cadeiras de rodas:</strong> Da era vitoriana em diante, personagens Lentos podem começar com uma cadeira de rodas manual sem custos. Na era moderna (1980 em diante) é possível escolher uma cadeira super leve ou uma motorizada. Todas as cadeiras de rodas requerem um solo razoavelmente plano para funcionarem (critério do Mestre).</p></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8003-a85e-f0c0b8154212" class="bulleted-list"><li style="list-style-type:disc"><strong>MANUAL:</strong> Movimentação é metade do dado de Atletismo (máximo de 3) e não pode correr.</li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-803b-913e-d4058d498e0f" class="bulleted-list"><li style="list-style-type:disc"><strong>SUPER LEVE:</strong> Movimentação é metade do dado de Atletismo e pode correr com d4 (Menor) ou d4-1 (Maior).</li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8061-96cf-c3049ce2f9f4" class="bulleted-list"><li style="list-style-type:disc"><strong>MOTORIZADA:</strong> Movimentação 6 em solo plano, 3 em solo acidentado, não pode correr. A maioria das cadeiras motorizadas pode andar cerca de 15 quilômetros antes de precisar de uma recarga.</li></ul></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-800f-9d93-e66ed0dcd507" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>LÍNGUA PRESA (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-805b-ad30-ea61a4ae1152" class="">Personagens com Língua Presa erram frases de efeito (ou pensam nelas só depois!), vão pela tangente quando estão tentando convencer alguém a fazer alguma coisa e no geral se expressam mal na maior parte do que tentam dizer. Sofrem uma penalidade de -1 em Intimidar, Performance e rolagens de Persuadir e Provocar que envolvam falar.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80d1-a6a1-f656b9eb4fd7" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>MÁ SORTE (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8051-a75c-eb85643ac250" class="">Personagens com má sorte têm mais azar que a maioria, recebendo um Bene a menos que o normal por sessão de jogo. Não é possível ter Má Sorte e a Vantagem Sorte simultaneamente.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80f8-a324-d9b8e8c0cd57" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>MUDO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-804a-a932-f59ebe72d65b" class="">Em virtude de um trauma ou de nascença, sua personagem perdeu a capacidade de falar. Podem escrever mensagens quando necessário, usar língua de sinais ou alguma combinação de comunicação visual. Comunicação baseada em visão pode requerer um teste de Perceber para ser corretamente compreendida (penalidades por iluminação e similares se aplicam).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8097-951a-d8eadd711fbd" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>NÃO SABE NADAR (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80fd-8a1a-fd99b5e43b90" class="">A maioria das pessoas no século XXI consegue nadar graças à piscinas, a facilidade de se viajar até lagos e praias ou por esforços educacionais. Contudo, historicamente, quem não foi criado perto de uma grande massa d’água não conseguia. Personagens com esta Complicação sofrem uma penalidade de -2 na perícia Atletismo quando estão nadando e cada quadro que se movem na água custa 3 quadros de Movimentação. Veja Movimento (pág. 107) e Afogamento (pág. 142) para mais detalhes.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8035-a085-e616eb320a43" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>OBESO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8072-b89d-ea99a9cec1d8" class="">Personagens maiores que suportam bem o seu próprio peso têm a Vantagem Musculoso. Caso contrário, são Obesos. Não é possível ser Musculoso e Obeso simultaneamente e esta Complicação não pode aumentar seu Tamanho além de +3. O Tamanho (e por consequência a Resistência) de uma personagem com Obeso aumenta em +1. Sua Movimentação é reduzida em 1 quadro e seu dado de corrida em um tipo (mínimo d4). Força é considerada um tipo de dado menor (mínimo d4) para armaduras e equipamentos usados (mas não armas). Também terão dificuldades em encontrar armaduras ou roupas em que caibam ou em entrar em espaços pequenos.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8019-afad-f91d98210db3" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>OBRIGAÇÃO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-801b-8b1b-c9f92f31b37a" class="">Existe uma responsabilidade que deve ser cumprida regularmente ou mesmo diariamente. Pode ser um emprego, trabalho voluntário, cuidar da família ou de pessoas do seu círculo de amizades, etc. A Obrigação consome cerca de 20 horas na semana ou 40 ou mais na versão Maior. Exatamente o que isso acarreta deve ser discutido entre Mestre e jogador.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80fb-84ff-cd787d307c4f" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>PACIFISTA (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a8-8c2a-c8ab581a800a" class="">Estas personagens desprezam a violência. Pacifismo Menor significa que lutam apenas se não for dada nenhuma outra opção e jamais permitem a matança de prisioneiros e outras vítimas indefesas. Pacifistas Maiores não irão combater criaturas vivas sob quaisquer circunstâncias. Podem se defender, mas não farão nada para ferir permanentemente criaturas vivas sencientes. Pacifistas Maiores também podem lutar com métodos não letais (veja pág. 119), mas apenas para autodefesa ou para defesa de terceiros. Criaturas inegavelmente malignas, mortos vivos, demônios e similares podem ser atacadas até mesmo pelos Pacifistas com a versão Maior desta complicação!</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80da-a879-e0ab73ed0e4b" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>PECULIARIDADE (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a2-8320-fb176df3a0e9" class="">Existe alguma fraqueza menor, normalmente engraçada, mas que ocasionalmente lhe causa problemas. Um espadachim pode sempre tentar primeiro cortar suas iniciais em seus inimigos, um anão pode se vangloriar constantemente a respeito da sua cultura ou uma debutante esnobe pode não comer, beber ou socializar com as classes mais baixas, por exemplo.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8052-9aa1-e0e7a8246782" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>PEQUENO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80a8-b293-cb38547a95b0" class="">Personagens Pequenos têm pouco peso, altura ou ambos. Seu Tamanho (veja pág. 127) é reduzido em 1, o que também reduz sua Resistência. Tamanho não pode ser reduzido abaixo de -1, mas a penalidade na Resistência permanece. Um pequenino com esta complicação, por exemplo, continua com Tamanho -1 e perde um ponto em sua Resistência.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80da-a3a6-d4722dfc7ccd" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>PESSIMISTA (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-805f-bb65-f1157a0cfbc9" class="">A personagem é do tipo pessimista que acredita que a luz no fim do túnel é um trem com seu nome nele. Adiciona +2 aos resultados de testes de Medo mal-sucedidos (pág. 50).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80db-ade2-df4fef7819a1" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>POBREZA (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80d6-8cea-ea36b13956e1" class="">Dizem que um tolo e seu dinheiro logo se separam, sua personagem é uma dessas pessoas. Elas começam com metade do dinheiro normal para o cenário e parecem não conseguir poupar os recursos adquiridos depois que o jogo começa. No geral, reduz à metade os seus recursos totais a cada semana de jogo.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8009-a61a-c5a2d9ae3ed4" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>PROCURADO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80ec-89a4-ce5bf1d76e83" class="">Personagens com Procurado cometeram algum crime e, se as autoridades descobrirem, acabarão na prisão. Isso pressupõe que o cenário possui leis e policiais para garantir o cumprimento delas. O nível da Complicação depende da gravidade do crime e o quão ativa é a perseguição. Inúmeras multas de estacionamento não pagas em um jogo onde precisa-se dirigir ocasionalmente gera uma Complicação Menor, assim como alguém Procurado por um crime mais grave longe da área principal da campanha. Uma acusação de assassinato é uma Complicação Maior em praticamente qualquer cenário se houver alguém em busca de justiça (ou vingança).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80e6-b6c6-e9d8fdb33c27" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>SANGUINÁRIO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8006-971c-df16cb3ab242" class="">Sanguinários nunca fazem prisioneiros, exceto sob a supervisão direta de alguém em posição superior. Sua brutalidade e sangue frio faz com que rivais respondam à altura, isso geralmente arruína a obtenção de informações importantes, cria contendas e inimizades constantemente e pode te colocar em maus lençóis com superiores ou as autoridades, dependendo do cenário.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8032-b3e6-c6640ffa4d2d" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>SEGREDO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80df-8189-d813816cdfb3" class="">Essas personagens têm um segredo que mantêm para se proteger ou proteger os outros. Como uma Complicação Menor, o segredo é problemático, mas não representa risco de vida. Na versão Maior, o segredo pode causar um problema grave se descoberto. Caso se torne de conhecimento público, deve trocar por Inimigo, Vergonha, Procurado ou outra Complicação apropriada aprovada pelo Mestre.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80b1-a01f-c634e5b77b62" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>SEM ESCRÚPULOS (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8072-864d-d01a28801893" class="">Personagens com esta complicação irão agir com fanatismo e farão quase tudo para completar seus propósitos. Como uma Complicação Maior, causam danos a todos que fiquem em seu caminho. Na versão Menor, param um pouco antes de causar danos reais, exceto aos que se opõem diretamente aos seus objetivos.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8073-a6a1-d4fc7d00c1f6" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>SEM-NOÇÃO (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80e4-85a5-c88fe9b1ec38" class="">Esta pessoa não presta muita atenção no mundo ao seu redor e não consegue achar um palheiro em uma pequena pilha de agulhas. A personagem sofre uma penalidade de -1 em rolagens de Conhecimento Geral e Perceber.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8097-8c78-e761c978e48b" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>SENSÍVEL (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80b2-acfa-cff82371d796" class="">Ataques pessoais deixam este indivíduo especialmente irritado. Como uma Complicação Menor, subtrai 2 quando resiste a Provocar. Como uma Maior, subtrai 4.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80f5-9ccf-f12ba82d769a" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>SONO PESADO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80d2-a71f-da95308a529e" class="">Uma tempestade do Inferno não acordaria este dorminhoco. Uma vez que apaga, é necessário uma rolagem de Perceber (-4) para acordar. Também sofre uma penalidade de -4 nas rolagens de Vigor para ficar acordado.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8043-b66c-cb4cd31e4a52" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>SUPERSTICIOSO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80df-ade3-e35118c788a7" class="">A personagem encontra algo que a ajuda a lidar com os terrores que enfrenta. Escolha uma rotina simples ou objeto que seja seu foco. Desde que o foco não seja perturbado, a personagem está bem. Se o foco for perdido ou perturbado, todas as rolagens de Características são feitas com -1.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-807a-97f9-c96a2e73fd0d" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>TERRORES NOTURNOS (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8018-95fc-df994144ec7e" class="">A Terra de Nod é um constante pesadelo para esta personagem investigadora. Você passa a noite se mexendo e provavelmente mantém todos ao alcance de sua voz acordados com seu tormento noturno. O repetido tormento em sua mente resulta em uma determinação enfraquecida. Por isso, subtraia 1 de todas as suas rolagens de Espírito. Qualquer pessoa que durma próximo de você tem uma longa noite pela frente (veja Sono em <em>Savage Worlds</em> para possíveis consequências).</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80ed-8bcd-e564fd3b2ba6" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>TEIMOSO (MENOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8060-adc4-c1a5427384ff" class="">Personagens Teimosos sempre querem as coisas do seu jeito e nunca admitem seus erros. Mesmo quando é dolorosamente óbvio que cometeram um erro, tentam justificá-lo com meias-verdades e racionalizações.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-806e-b470-d30a372ef6f5" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>UM BRAÇO SÓ (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-808a-9e67-d0d5b275a4f6" class="">Pode ter nascido com apenas um braço ou tê-lo perdido em batalha. Por sorte, o seu outro é (agora) o braço “bom”. Tarefas que requerem duas mãos, como rolagens de Atletismo (critério do Mestre) ou usar uma arma de duas mãos, sofrem um modificador de -4.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8093-8515-d3699182f919" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>UM OLHO SÓ (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80ab-a2d6-e7d5312efc2c" class="">Por ter perdido um olho, essa personagem tem problemas com percepção em profundidade. Subtraia 2 de qualquer rolagem de Característica dependente da visão de algo a mais de 5 quadros (10 metros) de distância.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-807f-b627-ce982fd31dfc" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>VALENTÃO (MENOR/MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80cf-81a2-e97104ed8e09" class="">Nada diverte mais este canalha do que tornar a vida dos outros miserável, especialmente se forem &quot;diferentes&quot;. Em sua versão Menor, personagens com a Complicação Valentão menosprezam aqueles que não gostam, que representem uma ameaça ou que pareçam deslocados. Em sua versão Maior, o Valentão está disposto e é capaz de confrontos físicos.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80f4-97de-ee00fb3c7ab9" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>VERGONHA (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80c4-bf8f-d1b50fa76b14" class="">Algo assombra essa personagem. Pode ser um voto feito que não foi mantido. Talvez tenha sido derrotada em uma luta honrosa e mesmo assim tenha ordenado a morte de seu inimigo por algum princípio maior. Pode não ser covarde, mas certa vez fugiu de uma batalha, deixando seus companheiros para morrer. Como uma Complicação Menor, as circunstâncias da vergonha não são de conhecimento geral, elas apenas assombram esta pessoa. Ela será capaz de um esforço absurdo, mesmo que irracional, para não repetir o seu erro ou pode ceder às circunstâncias e se odiar por isso. Como uma Complicação Maior, seu feito é de conhecimento público, ou, ao menos, de conhecimento entre pessoas próximas. As demais pessoas do grupo devem conhecer a história assim que possível (preferencialmente na criação de personagens). De outro modo, deve ser revelado por uma personagem do Mestre em algum momento e usado ocasionalmente contra a pessoa com a complicação.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-8051-93a3-f39ba3e9af8d" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>VINGATIVO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8089-9a06-c0be4117b697" class="">Vingança é… bem… é má notícia para alguém, e personagens com esta complicação irão obtê-la. Como uma Complicação Menor, geralmente buscam a vingança legalmente. O método varia de acordo com a situação. Algumas tramam ou conduzem esquemas por meses, enquanto outras exigem resultados mais imediatos. Personagens com a versão Maior desta Complicação não deixam que nada impeça sua busca pelo acerto de contas. Isso não significa que recorram imediatamente à violência, mas suas ações sempre se intensificam até que uma satisfação total e completa seja alcançada.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80cf-ac68-fda03e0f6871" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>VISÃO RUIM (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-8049-8644-e74f6c42fac9" class="">Os olhos desse herói ou heroína não enxergam mais como antes. Personagens com Visão Ruim sofrem uma penalidade de -1 em qualquer rolagem de Característica dependente de visão (como ataques à distância e rolagens de Perceber) ou -2 como uma Complicação Maior. Em cenários onde óculos estão disponíveis, eles negam a penalidade quando são usados. Se perdidos ou quebrados durante um combate (geralmente há uma chance de 50% quando a personagem ficar Ferido, cair ou sofrer algum outro trauma), ficará em Estado Distraído (e Vulnerável se for uma Complicação Maior) até o fim do próximo turno da personagem.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80a8-a82a-cb4f9b86c790" class="toggle"><li><details open=""><summary><mark class="highlight-red_background"><strong>VÍTIMA (MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-809c-be31-cec81552b03b" class="">Todos já vimos os filmes. Alguns heróis ou heroínas solitários estão destinados a sobreviver enquanto seus amigos são mortos um a um. Sua personagem raramente sobrevive até o final da história. Sempre que o Mestre decidir um alvo aleatoriamente, normalmente aquele com a Complicação Vítima deve ser escolhido. Qualquer adversário extra sem um alvo também deveria ir nesta personagem.</p></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="1bd20c7d-c14d-80e9-965b-ccf0f27c4c36" class="toggle"><li><details open=""><summary><mark class="highlight-teal_background"><strong>VOTO (MENOR OU MAIOR)</strong></mark></summary><div style="display:contents" dir="auto"><p id="1bd20c7d-c14d-80ae-a45a-d065078f365d" class="">Esta pessoa fez um voto para alguém ou algo em que acredita. O risco em cumprir o Voto e sua frequência determina o nível da Complicação. Um Voto Menor pode ser servir a uma ordem com mandamentos que raramente entram em conflito com os objetivos do grupo. Um Voto Maior faz com que as demandas sejam de longo prazo, frequentes e resultem em um grande risco à sua vida.</p></div></details></li></ul></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
